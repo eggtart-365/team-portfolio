@@ -1,0 +1,364 @@
+.skip-link {
+  position: absolute;
+  left: var(--pad);
+  top: 0.75rem;
+  z-index: 40;
+  padding: 0.45rem 0.7rem;
+  background: var(--ink);
+  color: var(--bg);
+  text-decoration: none;
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: var(--header);
+  background: var(--bg);
+}
+
+.site-header__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: 1rem;
+}
+
+.site-mark {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+}
+
+.nav-toggle {
+  display: none;
+  min-height: 2.75rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 0.95rem;
+}
+
+.site-nav ul {
+  display: flex;
+  gap: 1.35rem;
+}
+
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.site-nav a[aria-current="page"],
+.site-mark[aria-current="page"] {
+  color: var(--ink);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: calc(100svh - var(--header));
+  padding-bottom: clamp(2.5rem, 7vh, 4.5rem);
+}
+
+.hero__note {
+  max-width: 22rem;
+  margin-top: clamp(1.5rem, 6vh, 4rem);
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.hero h1 {
+  font-size: calc((100vw - (2 * var(--pad))) / 4.05);
+  font-weight: 600;
+  letter-spacing: -0.07em;
+  line-height: 0.9;
+  white-space: nowrap;
+}
+
+.reel {
+  height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: var(--pad);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  background: var(--bg);
+}
+
+.reel::-webkit-scrollbar {
+  display: none;
+}
+
+.reel.is-pinned {
+  overflow: hidden;
+  scroll-snap-type: none;
+}
+
+.reel__track {
+  display: flex;
+  flex: none;
+  align-items: stretch;
+  gap: clamp(0.75rem, 1.4vw, 1.15rem);
+  width: max-content;
+  height: calc(100svh - var(--header) - (var(--pad) * 2));
+  padding-inline: var(--pad);
+}
+
+.reel figure {
+  flex: 0 0 auto;
+  width: min(62vw, 46rem);
+  height: 100%;
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+.reel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.index-list {
+  padding-bottom: clamp(4rem, 12vh, 8rem);
+}
+
+.reel + .index-list {
+  padding-top: clamp(3rem, 10vh, 6rem);
+}
+
+.page .index-list {
+  margin-top: clamp(2.5rem, 6vh, 4rem);
+  padding-bottom: 0;
+}
+
+.index-list__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 0.85rem 0.15rem;
+  border-top: 1px solid var(--line);
+  color: inherit;
+  text-decoration: none;
+}
+
+.index-list__row:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.index-list__title {
+  font-size: clamp(2.4rem, 5vw, 4.25rem);
+}
+
+.index-list__meta {
+  color: var(--muted);
+  font-size: 0.875rem;
+  letter-spacing: 0;
+  line-height: 1.4;
+}
+
+a.index-list__row:hover,
+a.index-list__row:focus-visible {
+  margin-inline: calc(var(--pad) * -1);
+  padding-inline: var(--pad);
+  background: var(--ink);
+  color: var(--bg);
+}
+
+a.index-list__row:hover .index-list__meta,
+a.index-list__row:focus-visible .index-list__meta {
+  color: var(--bg);
+}
+
+.index-list:has(a:hover) a:not(:hover),
+.index-list:has(a:focus-visible) a:not(:focus-visible) {
+  color: var(--muted);
+}
+
+.faq {
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.faq__item {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq__item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 4.25rem;
+  padding: 0.8rem 0;
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq__item summary::after {
+  content: "+";
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+
+.faq__item[open] summary::after {
+  content: "–";
+}
+
+.faq__a {
+  max-width: 38rem;
+  padding-bottom: 1.25rem;
+  color: var(--muted);
+}
+
+.form {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 36rem;
+  margin-top: 2.5rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.label {
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 0.7rem 0;
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  border-radius: 0;
+  background: transparent;
+}
+
+.textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.55rem 1rem;
+  border: 0;
+  background: var(--ink);
+  color: var(--bg);
+  text-decoration: none;
+}
+
+.site-footer {
+  padding-block: 1.5rem 2rem;
+}
+
+.site-footer__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.site-footer__bar > a {
+  color: var(--muted);
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+@media (max-width: 860px) {
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .site-header .site-nav {
+    display: none;
+    position: fixed;
+    inset: var(--header) 0 0 0;
+    background: var(--bg);
+    padding: 1.5rem var(--pad) 2rem;
+  }
+
+  .site-header.is-open .site-nav {
+    display: block;
+  }
+
+  .site-header .site-nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .site-header .site-nav a {
+    min-height: 3.5rem;
+    color: var(--ink);
+    font-size: clamp(2rem, 8vw, 2.75rem);
+    font-weight: 600;
+    letter-spacing: -0.05em;
+  }
+
+  .site-footer__bar,
+  .site-footer .site-nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  body.nav-open {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 860px) {
+  .reel {
+    height: auto;
+    padding-bottom: 0;
+  }
+
+  .reel__track {
+    height: 68svh;
+  }
+
+  .reel figure {
+    width: 84vw;
+  }
+}
+
+@media (max-width: 640px) {
+  .index-list__row {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+    padding-block: 1rem;
+  }
+}
