@@ -64,8 +64,8 @@ button {
 }
 
 ::selection {
-  background: var(--ink);
-  color: var(--bg);
+  background: var(--gold);
+  color: var(--ink);
 }
 
 :focus {

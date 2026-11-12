@@ -37,7 +37,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>페이지 · ROOM 06</title>
-    <meta name="theme-color" content="#f2f2ef">
+    <meta name="theme-color" content="#f2ebdd">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-gov-dynamic-subset.min.css">
     <link rel="stylesheet" href="assets/css/tokens.css">
@@ -93,6 +93,6 @@
 
 서버가 없다. 폼을 백엔드에 연결하지 않는다.
 
-색은 `--bg` `--ink` `--muted` `--line`만 쓴다. 본문은 `.prose` 너비를 넘기지 않는다.
+색은 `--bg` `--ink` `--muted` `--line` `--accent` `--gold`만 쓴다. `--accent`는 버튼과 이름 줄 호버의 바탕에만 쓴다. `--gold`는 선택 영역에만 쓴다. 본문은 `.prose` 너비를 넘기지 않는다.
 
 커밋은 `feat: 팀 소개 본문 작성`처럼 한 줄이다. Co-authored-by를 붙이지 않는다.
