@@ -2,7 +2,7 @@
 
 팀원 6명이 함께 만드는 팀 포트폴리오 웹사이트입니다. 팀 소개, 팀원별 역량, 프로젝트 결과물과 활동 기록을 공유하고, Git과 GitHub를 활용한 협업 과정을 경험합니다.
 
-> 1주차 기획 단계의 README입니다. 팀명은 ROOM 06이고, 역할은 안내서 항목과 팀원 희망을 기준으로 배정했습니다. 제출용 문서는 [프로젝트 기획서](docs/프로젝트-기획서.pdf), [역할 분담표](docs/역할-분담표.pdf)입니다.
+> 팀명은 ROOM 06이고, 역할은 안내서 항목과 팀원 희망을 기준으로 배정했습니다. 제출용 문서는 [프로젝트 기획서](docs/프로젝트-기획서.pdf), [역할 분담표](docs/역할-분담표.pdf)입니다. 공통 디자인과 메인 페이지는 저장소에 있고, 나머지 페이지의 내용은 담당자가 채웁니다.
 
 ## 프로젝트 정보
 
@@ -129,10 +129,26 @@ PR에는 다음 내용을 포함합니다.
 
 충돌이 발생하면 관련 팀원과 함께 변경 내용을 확인해 해결합니다. 충돌 상황, 해결 방법, 해결 결과와 관련 PR 링크를 활동 기록 또는 별도 작업 기록에 남깁니다.
 
+## 디자인 시스템
+
+공통 화면 규칙은 [AGENTS.md](AGENTS.md)에 있다. 페이지를 만들거나 AI에게 맡길 때 그 파일을 먼저 읽는다. 글꼴은 Pretendard GOV 하나다.
+
 ## 실행 및 배포
 
-현재는 기획 단계이며 실행할 웹페이지가 없습니다.
+저장소를 내려받아 `index.html`을 브라우저로 엽니다. 글꼴과 메인 화면의 움직임은 인터넷에 연결되어 있을 때 불러옵니다.
 
-- 구현 후 실행 방법: 저장소를 내려받아 `index.html`을 브라우저로 엽니다. 개발 방식이 변경되면 실행 방법을 갱신합니다.
 - 배포 계획: `main` 브랜치의 검증된 코드를 GitHub Pages로 배포합니다.
 - GitHub Pages 설정과 최초 배포 확인 후 실제 배포 주소를 이 문서에 추가합니다.
+
+## 출처
+
+| 자료 | 용도 | 라이선스 |
+| --- | --- | --- |
+| [Pretendard GOV](https://github.com/orioncactus/pretendard) | 글꼴 | SIL OFL 1.1 |
+| [GSAP](https://gsap.com/community/standard-license/) | 메인 화면 움직임 | Standard License, 무료 |
+| [건물 외관](https://images.unsplash.com/photo-1487958449943-2429e8be8625) | 메인 화면 | [Unsplash License](https://unsplash.com/license) |
+| [복도](https://images.unsplash.com/photo-1497366216548-37526070297c) | 메인 화면 | [Unsplash License](https://unsplash.com/license) |
+| [유리 복도](https://images.unsplash.com/photo-1497366754035-f200968a6e72) | 메인 화면 | [Unsplash License](https://unsplash.com/license) |
+| [거실](https://images.unsplash.com/photo-1600607687939-ce8a6c25118c) | 메인 화면 | [Unsplash License](https://unsplash.com/license) |
+
+화면 참고: [Immersive website portfolio for developer](https://www.behance.net/gallery/238189427/Immersive-website-portfolio-for-developer), [Personal Portfolio Website for Industrial Designer](https://www.behance.net/gallery/212841165/Personal-Portfolio-Website-for-Industrial-Designer). 사진은 저장소 `assets/images/`에 두었다.
