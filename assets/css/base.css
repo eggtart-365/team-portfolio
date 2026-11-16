@@ -1,0 +1,127 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+main {
+  flex: 1;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.pad {
+  padding-inline: var(--pad);
+}
+
+.page h1,
+.index-list__title {
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+}
+
+.page {
+  padding-top: clamp(4.5rem, 12vh, 8rem);
+  padding-bottom: clamp(4rem, 10vh, 7rem);
+}
+
+.page h1 {
+  font-size: clamp(3.5rem, 9vw, 7.5rem);
+}
+
+.prose {
+  max-width: 38rem;
+  margin-top: 2.5rem;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.prose p + p {
+  margin-top: 1rem;
+}
+
+.prose a {
+  text-underline-offset: 0.18em;
+}
+
+.frame {
+  margin-top: 2.5rem;
+}
+
+[id] {
+  scroll-margin-top: calc(var(--header) + 1rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
