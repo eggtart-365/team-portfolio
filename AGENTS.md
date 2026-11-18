@@ -2,7 +2,7 @@
 
 페이지를 만들기 전에 이 파일을 읽는다. 화면 문구로 규칙을 설명하지 않는다.
 
-정적 HTML, CSS, JavaScript만 쓴다. npm, React, Bootstrap, Tailwind를 넣지 않는다. 색은 `tokens.css` 변수만 쓴다. 글꼴은 Pretendard GOV 하나다. 다른 글꼴, 인라인 스타일, 카드, 그림자, 그라데이션, 번호 라벨, 영문 장식을 추가하지 않는다.
+정적 HTML, CSS, JavaScript만 쓴다. npm, React, Bootstrap, Tailwind를 넣지 않는다. 색은 `tokens.css` 변수만 쓴다. 본문 글꼴은 Pretendard GOV 하나다. 헤더와 푸터의 ROOM 06만 Fraunces를 쓴다. 다른 글꼴, 인라인 스타일, 카드, 그림자, 그라데이션, 번호 라벨, 영문 장식을 추가하지 않는다.
 
 헤더와 푸터는 `assets/js/layout.js`가 그린다. HTML에 메뉴를 다시 쓰지 않는다. 페이지는 저장소 루트에 둔다.
 
@@ -40,6 +40,7 @@
     <meta name="theme-color" content="#f2ebdd">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-gov-dynamic-subset.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560&display=swap">
     <link rel="stylesheet" href="assets/css/tokens.css">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/components.css">

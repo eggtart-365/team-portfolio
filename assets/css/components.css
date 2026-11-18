@@ -31,9 +31,12 @@
 }
 
 .site-mark {
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: -0.04em;
+  font-family: var(--mark);
+  font-size: 1.15rem;
+  font-weight: 560;
+  font-variation-settings: "opsz" 72, "SOFT" 40, "WONK" 1;
+  letter-spacing: 0.04em;
+  line-height: 1;
   text-decoration: none;
 }
 
@@ -291,10 +294,34 @@ a.index-list__row:focus-visible .index-list__meta {
   border-top: 1px solid var(--line);
 }
 
-.site-footer__bar > a {
+.site-footer .site-mark {
+  color: var(--ink);
+}
+
+.repo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
   color: var(--muted);
-  font-size: 0.875rem;
   text-decoration: none;
+}
+
+.repo svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.repo:hover,
+.repo:focus-visible {
+  color: var(--ink);
+}
+
+.site-footer__rights {
+  margin-top: 0.85rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
 }
 
 @media (max-width: 860px) {

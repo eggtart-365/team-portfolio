@@ -129,7 +129,7 @@ PR에는 다음 내용을 포함합니다.
 
 ## 디자인 시스템
 
-공통 화면 규칙은 [AGENTS.md](AGENTS.md)에 있다. 페이지를 만들거나 AI에게 맡길 때 그 파일을 먼저 읽는다. 글꼴은 Pretendard GOV 하나다.
+공통 화면 규칙은 [AGENTS.md](AGENTS.md)에 있다. 페이지를 만들거나 AI에게 맡길 때 그 파일을 먼저 읽는다. 본문은 Pretendard GOV, 헤더와 푸터의 이름은 Fraunces다.
 
 ## 실행 및 배포
 
@@ -142,7 +142,8 @@ PR에는 다음 내용을 포함합니다.
 
 | 자료                                                                      | 용도             | 라이선스                                         |
 | ------------------------------------------------------------------------- | ---------------- | ------------------------------------------------ |
-| [Pretendard GOV](https://github.com/orioncactus/pretendard)               | 글꼴             | SIL OFL 1.1                                      |
+| [Pretendard GOV](https://github.com/orioncactus/pretendard)               | 본문 글꼴        | SIL OFL 1.1                                      |
+| [Fraunces](https://github.com/undercasetype/Fraunces)                     | 헤더·푸터 이름   | SIL OFL 1.1                                      |
 | [GSAP](https://gsap.com/community/standard-license/)                      | 메인 화면 움직임 | Standard License, 무료                           |
 | [건물 외관](https://images.unsplash.com/photo-1487958449943-2429e8be8625) | 메인 화면        | [Unsplash License](https://unsplash.com/license) |
 | [복도](https://images.unsplash.com/photo-1497366216548-37526070297c)      | 메인 화면        | [Unsplash License](https://unsplash.com/license) |
