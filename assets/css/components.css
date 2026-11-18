@@ -30,12 +30,17 @@
   gap: 1rem;
 }
 
+.site-header,
+.site-header__bar,
+.site-footer {
+  overflow: visible;
+}
+
 .site-mark {
   font-family: var(--mark);
-  font-size: 1.15rem;
-  font-weight: 560;
-  font-variation-settings: "opsz" 72, "SOFT" 40, "WONK" 1;
-  letter-spacing: 0.04em;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0;
   line-height: 1;
   text-decoration: none;
 }
@@ -96,6 +101,15 @@ html.intro-skip .intro {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .win__a,
+  .win__b {
+    animation: none;
+  }
+
+  .win__b {
+    visibility: hidden;
+  }
+
   .intro {
     display: none;
   }
@@ -140,11 +154,136 @@ html:has(.intro):not(.intro-skip) {
 }
 
 .hero h1 {
-  font-size: calc((100vw - (2 * var(--pad))) / 4.05);
+  font-size: calc((100vw - (2 * var(--pad))) / 4.55);
   font-weight: 600;
-  letter-spacing: -0.07em;
-  line-height: 0.9;
+  letter-spacing: -0.04em;
+  line-height: 1;
   white-space: nowrap;
+}
+
+.win {
+  --veil: linear-gradient(color-mix(in srgb, var(--ink) 80%, var(--bg)), color-mix(in srgb, var(--ink) 80%, var(--bg)));
+  position: relative;
+  display: inline-block;
+  margin-inline: -0.05em;
+  line-height: 1;
+}
+
+.win__a,
+.win__b {
+  display: block;
+  padding: 0.08em 0.07em 0.12em;
+  background-image: var(--veil), var(--a);
+  background-repeat: no-repeat;
+  background-size: auto, auto 155%;
+  background-position: center, 50% 28%;
+  background-blend-mode: multiply;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: win-pan 8s ease-in-out infinite alternate;
+}
+
+.win__b {
+  position: absolute;
+  inset: 0;
+  background-image: var(--veil), var(--b);
+  animation:
+    win-swap 11s cubic-bezier(0.45, 0.02, 0.2, 1) infinite,
+    win-pan 8s ease-in-out infinite alternate-reverse;
+}
+
+.win--1 {
+  --a: url("../images/figure.jpg");
+  --b: url("../images/walk.jpg");
+}
+
+.win--2 {
+  --a: url("../images/table.jpg");
+  --b: url("../images/laptops.jpg");
+}
+
+.win--2 .win__a {
+  animation-delay: -3s;
+}
+
+.win--2 .win__b {
+  animation-delay: -2.4s, -3s;
+}
+
+.win--3 {
+  --a: url("../images/hands.jpg");
+  --b: url("../images/aside.jpg");
+}
+
+.win--3 .win__a {
+  animation-delay: -6s;
+}
+
+.win--3 .win__b {
+  animation-delay: -5.2s, -6s;
+}
+
+.win--4 {
+  --a: url("../images/room.jpg");
+  --b: url("../images/desk.jpg");
+}
+
+.win--4 .win__a {
+  animation-delay: -1.5s;
+}
+
+.win--4 .win__b {
+  animation-delay: -7.6s, -1.5s;
+}
+
+.win--5 {
+  --a: url("../images/drawing.jpg");
+  --b: url("../images/office.jpg");
+}
+
+.win--5 .win__a {
+  animation-delay: -4.5s;
+}
+
+.win--5 .win__b {
+  animation-delay: -3.6s, -4.5s;
+}
+
+.win--6 {
+  --a: url("../images/talk.jpg");
+  --b: url("../images/loft.jpg");
+}
+
+.win--6 .win__a {
+  animation-delay: -7s;
+}
+
+.win--6 .win__b {
+  animation-delay: -8.8s, -7s;
+}
+
+@keyframes win-pan {
+  to {
+    background-position: 50% 72%;
+  }
+}
+
+@keyframes win-swap {
+  0%,
+  20% {
+    clip-path: inset(100% 0 0 0);
+  }
+
+  45%,
+  70% {
+    clip-path: inset(0 0 0 0);
+  }
+
+  100% {
+    clip-path: inset(0 0 100% 0);
+  }
 }
 
 .reel {
@@ -346,6 +485,10 @@ a.index-list__row:focus-visible .index-list__meta {
   gap: 1rem 2rem;
   padding-top: 1rem;
   border-top: 1px solid var(--line);
+}
+
+.site-header .site-mark {
+  transform: translateY(0.2rem);
 }
 
 .site-footer .site-mark {
