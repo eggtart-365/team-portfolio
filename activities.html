@@ -13,42 +13,50 @@
   </head>
   <body data-page="activities">
     <div data-mount="header"></div>
-    <main id="main" class="page pad" tabindex="-1">
+    <main id="main" class="page page--split pad" tabindex="-1">
       <h1>기록</h1>
-      <div class="index-list">
-        <div class="index-list__row">
-          <h2 class="index-list__title">이슈 등록</h2>
-          <p class="index-list__meta">개발 · 2026.11.17</p>
-        </div>
-        <div class="index-list__row">
-          <h2 class="index-list__title">디자인 시스템 병합</h2>
-          <p class="index-list__meta">개발 · 2026.11.16</p>
-        </div>
-        <div class="index-list__row">
-          <h2 class="index-list__title">메인 페이지 구현</h2>
-          <p class="index-list__meta">개발 · 2026.11.12</p>
-        </div>
-        <div class="index-list__row">
-          <h2 class="index-list__title">저장소 준비</h2>
-          <p class="index-list__meta">개발 · 2026.11.04</p>
-        </div>
-        <div class="index-list__row">
-          <h2 class="index-list__title">기획서 작성</h2>
-          <p class="index-list__meta">회의 · 2026.11.02</p>
-        </div>
-        <div class="index-list__row">
-          <h2 class="index-list__title">팀명 결정</h2>
-          <p class="index-list__meta">회의 · 2026.11.02</p>
-        </div>
-        <div class="index-list__row">
-          <h2 class="index-list__title">콘셉트 결정</h2>
-          <p class="index-list__meta">회의 · 2026.10.30</p>
-        </div>
-        <div class="index-list__row">
-          <h2 class="index-list__title">팀 구성</h2>
-          <p class="index-list__meta">회의 · 2026.10.29</p>
-        </div>
-      </div>
+      <ol class="log">
+        <li class="log__row">
+          <time class="log__date" datetime="2026-10-29">2026.10.29</time>
+          <h2 class="log__title">팀 구성</h2>
+          <p class="log__meta">회의</p>
+        </li>
+        <li class="log__row">
+          <time class="log__date" datetime="2026-10-30">2026.10.30</time>
+          <h2 class="log__title">콘셉트 결정</h2>
+          <p class="log__meta">회의</p>
+        </li>
+        <li class="log__row">
+          <time class="log__date" datetime="2026-11-02">2026.11.02</time>
+          <h2 class="log__title">팀명 결정</h2>
+          <p class="log__meta">회의</p>
+        </li>
+        <li class="log__row">
+          <time class="log__date" datetime="2026-11-02">2026.11.02</time>
+          <h2 class="log__title">기획서 작성</h2>
+          <p class="log__meta">회의</p>
+        </li>
+        <li class="log__row">
+          <time class="log__date" datetime="2026-11-04">2026.11.04</time>
+          <h2 class="log__title">저장소 준비</h2>
+          <p class="log__meta">개발</p>
+        </li>
+        <li class="log__row">
+          <time class="log__date" datetime="2026-11-12">2026.11.12</time>
+          <h2 class="log__title">메인 페이지 구현</h2>
+          <p class="log__meta">개발</p>
+        </li>
+        <li class="log__row">
+          <time class="log__date" datetime="2026-11-16">2026.11.16</time>
+          <h2 class="log__title">디자인 시스템 병합</h2>
+          <p class="log__meta">개발</p>
+        </li>
+        <li class="log__row">
+          <time class="log__date" datetime="2026-11-17">2026.11.17</time>
+          <h2 class="log__title">이슈 등록</h2>
+          <p class="log__meta">개발</p>
+        </li>
+      </ol>
     </main>
     <div data-mount="footer"></div>
     <script src="assets/js/layout.js"></script>
