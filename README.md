@@ -144,6 +144,7 @@ PR에는 다음 내용을 포함합니다.
 | ------------------------------------------------------------------------- | ---------------- | ------------------------------------------------ |
 | [Pretendard GOV](https://github.com/orioncactus/pretendard)               | 본문 글꼴        | SIL OFL 1.1                                      |
 | [Fraunces](https://github.com/undercasetype/Fraunces)                     | 헤더·푸터 이름   | SIL OFL 1.1                                      |
+| [Pinyon Script](https://fonts.google.com/specimen/Pinyon+Script)          | 메인 진입 화면   | SIL OFL 1.1                                      |
 | [GSAP](https://gsap.com/community/standard-license/)                      | 메인 화면 움직임 | Standard License, 무료                           |
 | [건물 외관](https://images.unsplash.com/photo-1487958449943-2429e8be8625) | 메인 화면        | [Unsplash License](https://unsplash.com/license) |
 | [복도](https://images.unsplash.com/photo-1497366216548-37526070297c)      | 메인 화면        | [Unsplash License](https://unsplash.com/license) |
