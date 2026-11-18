@@ -23,8 +23,7 @@
 | `members.html` | 김하영. 아래 id는 유지 |
 | `projects.html` | 김선재. 상세는 김하영, 파일명 `project-이름.html`, `data-page="projects"` |
 | `activities.html` | 김병찬 |
-| `faq.html` | 박찬준 |
-| `contact.html` | 박찬준 |
+| `contact.html` | 박찬준. 질문은 `#faq` 안에 둔다 |
 
 앵커: `kim-taehyun` `kim-hayoung` `park-chanjun` `woo-jungwoo` `kim-seonjae` `kim-byeongchan`
 
@@ -58,7 +57,7 @@
 </html>
 ```
 
-`data-page`는 `home` `about` `members` `projects` `activities` `faq` `contact` 중 하나다. 제목 `h1`은 페이지당 하나.
+`data-page`는 `home` `about` `members` `projects` `activities` `contact` 중 하나다. 제목 `h1`은 페이지당 하나.
 
 이름 목록은 메인의 줄과 같다. 오른쪽 작은 글은 직책만 쓴다. 담당 페이지 이름을 넣지 않는다. 메인 화면의 이름 줄에는 오른쪽 글을 두지 않는다.
 
