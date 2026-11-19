@@ -1,0 +1,453 @@
+/* 팀원 프로필 카드 (members.html 전용) */
+
+/* 상단 영역 */
+[data-page="members"] .site-header {
+  border-bottom: 1px solid var(--line);
+}
+
+[data-page="members"] .page {
+  padding-top: clamp(2.5rem, 7vh, 4.5rem);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 19.5rem), 1fr));
+  gap: 2.25rem 1.75rem;
+  margin-top: clamp(1.5rem, 4vh, 2.5rem);
+}
+
+/* 줄에 걸려 있는 카드 한 칸 */
+.badge-slot {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 카드 위를 가로지르는 줄과 클립 */
+.hang-rail {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.625rem;
+  margin-bottom: 2px;
+  pointer-events: none;
+}
+
+.hang-rail::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: -0.875rem;
+  right: -0.875rem;
+  height: 1px;
+  background: color-mix(in srgb, var(--muted) 45%, transparent);
+}
+
+.hang-clip {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(-2px);
+  transition: transform 0.25s ease;
+}
+
+.hang-clip::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+.hang-clip::after {
+  content: "";
+  width: 1.5px;
+  height: 13px;
+  margin-top: -1px;
+  background: var(--gold);
+}
+
+.badge-slot:hover .hang-clip {
+  transform: translateY(1px);
+}
+
+/* 카드 전체 */
+.id-card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transform-origin: top center;
+  transition: transform 0.25s ease;
+}
+
+.id-card:hover {
+  transform: translateY(-4px) rotate(-0.4deg);
+}
+
+/* 위쪽 진한 녹색 띠 */
+.pass-strip {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 0.85rem;
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+}
+
+.pass-strip::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  width: 24px;
+  height: 4px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg) 75%, transparent);
+  transform: translateX(-50%);
+}
+
+.pass-dept {
+  color: var(--gold);
+}
+
+/* 카드 본체 */
+.student-id-body {
+  display: grid;
+  grid-template-columns: 1fr 2.625rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-top: 0;
+  background: color-mix(in srgb, var(--ink) 4%, var(--bg));
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.id-card:hover .student-id-body,
+.id-card:focus-visible .student-id-body {
+  border-color: var(--gold);
+  box-shadow: 0 10px 22px -12px color-mix(in srgb, var(--ink) 30%, transparent);
+}
+
+.id-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.9rem;
+  padding: 0.95rem;
+}
+
+/* 사진 자리 */
+.photo-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--ink) 8%, var(--bg));
+}
+
+.portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.id-card:hover .portrait-img {
+  transform: scale(1.03);
+}
+
+.monogram-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+}
+
+.monogram-char {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.monogram-sub {
+  margin-top: 0.4rem;
+  color: var(--muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+}
+
+.inspect-hint {
+  position: absolute;
+  right: 0.55rem;
+  bottom: 0.55rem;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--gold);
+  background: var(--bg);
+  font-size: 0.7rem;
+  font-weight: 700;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.id-card:hover .inspect-hint,
+.id-card:focus-visible .inspect-hint {
+  opacity: 1;
+  transform: none;
+}
+
+/* 이름, 번호 줄 */
+.id-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.id-field {
+  padding-bottom: 0.22rem;
+  border-bottom: 1px solid var(--muted);
+}
+
+.id-field-value {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.4rem;
+  font-size: 1.0625rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.id-field-role {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.id-field-label {
+  margin-top: 0.18rem;
+  color: var(--muted);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+/* 아래쪽 연도와 동그라미 */
+.id-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.id-year-block {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.id-year {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.id-dept-sub {
+  margin-top: 0.15rem;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.circle-emblem {
+  position: relative;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 3.375rem;
+  height: 3.375rem;
+  border: 1px solid var(--muted);
+  border-radius: 50%;
+}
+
+.circle-emblem::before {
+  content: "";
+  position: absolute;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+}
+
+.circle-emblem span {
+  position: relative;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* 오른쪽 세로 띠 */
+.id-side-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 0;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  writing-mode: vertical-rl;
+  user-select: none;
+}
+
+/* 상세 창 */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: color-mix(in srgb, var(--ink) 55%, transparent);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.profile-modal {
+  position: relative;
+  width: 100%;
+  max-width: 35rem;
+  padding: clamp(1.5rem, 4vw, 2.2rem);
+  border: 1px solid var(--ink);
+  background: var(--bg);
+  box-shadow: 0 20px 40px color-mix(in srgb, var(--ink) 25%, transparent);
+  transform: translateY(10px);
+  transition: transform 0.2s ease;
+}
+
+.modal-backdrop.open .profile-modal {
+  transform: none;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--line);
+  background: transparent;
+  font-size: 1.1rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.modal-close:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.modal-catalog {
+  margin-bottom: 0.35rem;
+  color: var(--gold);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.modal-title {
+  margin-bottom: 0.2rem;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.modal-subtitle {
+  margin-bottom: 1.2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.spec-table {
+  width: 100%;
+  margin-bottom: 1.4rem;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.spec-table th,
+.spec-table td {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.spec-table th {
+  width: 6.5rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.58rem 1.15rem;
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.modal-link:hover {
+  background: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .id-card,
+  .hang-clip,
+  .portrait-img,
+  .inspect-hint,
+  .profile-modal {
+    transition: none;
+  }
+
+  .id-card:hover {
+    transform: none;
+  }
+}
