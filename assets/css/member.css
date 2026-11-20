@@ -1,25 +1,142 @@
 /* 팀원 프로필 카드 (members.html 전용) */
 
-/* 상단 영역 */
+/* 페이지 바탕 */
 [data-page="members"] .site-header {
   border-bottom: 1px solid var(--line);
 }
 
+[data-page="members"] .site-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 0.08em;
+}
+
+[data-page="members"] .site-mark::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+
+[data-page="members"] .site-header .site-nav a {
+  position: relative;
+}
+
+[data-page="members"] .site-header .site-nav a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.45rem;
+  height: 2px;
+  background: var(--gold);
+}
+
 [data-page="members"] .page {
-  padding-top: clamp(2.5rem, 7vh, 4.5rem);
+  width: 100%;
+  max-width: 75rem;
+  margin-inline: auto;
+  padding-top: clamp(2.5rem, 5vw, 4rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+/* 제목 상자 */
+.exhibition-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border: 1px solid var(--line);
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.exhibition-hero h1 {
+  font-size: clamp(2.4rem, 4.8vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.exhibition-desc {
+  max-width: 28rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* 구분 버튼 줄 */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.filter-btn {
+  min-height: 2.75rem;
+  padding: 0.42rem 0.95rem;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--muted);
+  color: var(--ink);
+}
+
+.filter-btn.active {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.exhibit-count {
+  color: var(--muted);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
 }
 
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 19.5rem), 1fr));
   gap: 2.25rem 1.75rem;
-  margin-top: clamp(1.5rem, 4vh, 2.5rem);
 }
 
 /* 줄에 걸려 있는 카드 한 칸 */
 .badge-slot {
   display: flex;
   flex-direction: column;
+}
+
+.badge-slot[hidden] {
+  display: none;
 }
 
 /* 카드 위를 가로지르는 줄과 클립 */
@@ -442,6 +559,7 @@
   .id-card,
   .hang-clip,
   .portrait-img,
+  .filter-btn,
   .inspect-hint,
   .profile-modal {
     transition: none;

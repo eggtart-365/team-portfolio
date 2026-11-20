@@ -34,6 +34,32 @@
     });
   });
 
+  // 구분 버튼: 팀장 / 팀원만 골라 보기
+  var filterButtons = document.querySelectorAll(".filter-btn");
+  var slots = document.querySelectorAll(".badge-slot");
+  var count = document.getElementById("exhibitCount");
+
+  filterButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      var filter = button.dataset.filter;
+      var shown = 0;
+
+      filterButtons.forEach(function (other) {
+        var active = other === button;
+        other.classList.toggle("active", active);
+        other.setAttribute("aria-pressed", active ? "true" : "false");
+      });
+
+      slots.forEach(function (slot) {
+        var show = filter === "all" || slot.dataset.category === filter;
+        slot.hidden = !show;
+        if (show) shown += 1;
+      });
+
+      count.textContent = "DISPLAYING " + shown + " STAFF CARD" + (shown > 1 ? "S" : "");
+    });
+  });
+
   closeButton.addEventListener("click", closeModal);
 
   modal.addEventListener("click", function (event) {

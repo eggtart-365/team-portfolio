@@ -15,9 +15,23 @@
   <body data-page="members">
     <div data-mount="header"></div>
     <main id="main" class="page pad" tabindex="-1">
-      <h1>팀원</h1>
-      <section class="gallery-grid" aria-label="팀원">
-        <div class="badge-slot" id="kim-taehyun">
+      <section class="exhibition-hero">
+        <div>
+          <span class="eyebrow">MUSEUM STAFF · ID CARD GALLERY</span>
+          <h1>팀원</h1>
+        </div>
+        <p class="exhibition-desc">ROOM 06 박물관 직원들의 출입증 프로필입니다. 카드를 누르면 담당 영역과 GitHub 링크를 확인할 수 있습니다.</p>
+      </section>
+      <div class="filter-bar">
+        <div class="filter-tabs" role="group" aria-label="구분">
+          <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">전체 (6)</button>
+          <button class="filter-btn" type="button" data-filter="leader" aria-pressed="false">팀장</button>
+          <button class="filter-btn" type="button" data-filter="member" aria-pressed="false">팀원</button>
+        </div>
+        <span class="exhibit-count" id="exhibitCount" aria-live="polite">DISPLAYING 6 STAFF CARDS</span>
+      </div>
+      <section class="gallery-grid" id="galleryGrid" aria-label="팀원">
+        <div class="badge-slot" id="kim-taehyun" data-category="leader">
           <div class="hang-rail" aria-hidden="true">
             <span class="hang-clip"></span>
           </div>
@@ -62,7 +76,7 @@
             </div>
           </article>
         </div>
-        <div class="badge-slot" id="kim-hayoung">
+        <div class="badge-slot" id="kim-hayoung" data-category="member">
           <div class="hang-rail" aria-hidden="true">
             <span class="hang-clip"></span>
           </div>
@@ -107,7 +121,7 @@
             </div>
           </article>
         </div>
-        <div class="badge-slot" id="park-chanjun">
+        <div class="badge-slot" id="park-chanjun" data-category="member">
           <div class="hang-rail" aria-hidden="true">
             <span class="hang-clip"></span>
           </div>
@@ -152,7 +166,7 @@
             </div>
           </article>
         </div>
-        <div class="badge-slot" id="woo-jungwoo">
+        <div class="badge-slot" id="woo-jungwoo" data-category="member">
           <div class="hang-rail" aria-hidden="true">
             <span class="hang-clip"></span>
           </div>
@@ -197,7 +211,7 @@
             </div>
           </article>
         </div>
-        <div class="badge-slot" id="kim-seonjae">
+        <div class="badge-slot" id="kim-seonjae" data-category="member">
           <div class="hang-rail" aria-hidden="true">
             <span class="hang-clip"></span>
           </div>
@@ -242,7 +256,7 @@
             </div>
           </article>
         </div>
-        <div class="badge-slot" id="kim-byeongchan">
+        <div class="badge-slot" id="kim-byeongchan" data-category="member">
           <div class="hang-rail" aria-hidden="true">
             <span class="hang-clip"></span>
           </div>
