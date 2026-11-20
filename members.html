@@ -20,7 +20,6 @@
           <span class="eyebrow">MUSEUM STAFF · ID CARD GALLERY</span>
           <h1>팀원</h1>
         </div>
-        <p class="exhibition-desc">ROOM 06 박물관 직원들의 출입증 프로필입니다. 카드를 누르면 담당 영역과 GitHub 링크를 확인할 수 있습니다.</p>
       </section>
       <div class="filter-bar">
         <div class="filter-tabs" role="group" aria-label="구분">
@@ -303,20 +302,71 @@
         </div>
       </section>
     </main>
+    <!-- 상세 보기: 박물관 티켓 모달 -->
     <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <div class="profile-modal">
-        <button class="modal-close" id="modalClose" type="button" aria-label="닫기">&times;</button>
-        <p class="modal-catalog" id="modalCatalog"></p>
-        <h2 class="modal-title" id="modalTitle"></h2>
-        <p class="modal-subtitle" id="modalSubtitle"></p>
-        <table class="spec-table">
-          <tr>
-            <th>담당</th>
-            <td id="modalWork"></td>
-          </tr>
-        </table>
-        <div class="modal-actions">
-          <a class="modal-link" id="modalGithub" href="#" target="_blank" rel="noopener noreferrer">GitHub &rarr;</a>
+      <div class="ticket-wrapper">
+        <div class="ticket-modal">
+          <!-- 1. 짙은 초록색 좌측 세로 티켓 번호 -->
+          <div class="ticket-left-strip">
+            <span class="ticket-left-text" id="ticketLeftNo">NO. 01 · ROOM 06</span>
+          </div>
+
+          <!-- 2. 중앙 티켓 본권 -->
+          <div class="ticket-center">
+            <div class="ticket-frame-box">
+              <div class="ticket-frame-inner">
+                <div class="ticket-kicker">
+                  <span>ROOM 06 MUSEUM TICKET</span>
+                  <span class="ticket-stars">★ ★ ★</span>
+                </div>
+
+                <div class="ticket-name-row">
+                  <h2 class="ticket-name" id="modalTitle">직원 이름</h2>
+                  <span class="ticket-badge-pill" id="ticketPassBadge">PASS 01</span>
+                </div>
+                <div class="ticket-role" id="modalSubtitle">담당 직책</div>
+                <p class="ticket-note" id="modalNote"></p>
+                <div class="ticket-notice">· ROOM 06 EXHIBITION STAFF ARCHIVE ·</div>
+              </div>
+            </div>
+
+            <div class="ticket-meta-row">
+              <div class="ticket-cell">
+                <span class="ticket-cell-label">DEPT · 부서</span>
+                <span class="ticket-cell-value" id="modalDept">-</span>
+              </div>
+              <div class="ticket-cell">
+                <span class="ticket-cell-label">DUTY · 담당</span>
+                <span class="ticket-cell-value" id="modalDuty">-</span>
+              </div>
+              <div class="ticket-cell">
+                <span class="ticket-cell-label">YEAR</span>
+                <span class="ticket-cell-value" id="modalYear">2026</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. 우측 절취부(스텁): 스캔 가능한 GitHub QR -->
+          <div class="ticket-stub">
+            <div class="stub-top">
+              <span class="stub-tag">✂ ADMIT ONE</span>
+              <button class="modal-close" id="modalClose" aria-label="티켓 닫기">&times;</button>
+            </div>
+
+            <div class="qr-wrapper">
+              <div class="qr-box">
+                <img id="modalQrImg" src="" alt="GitHub 프로필 QR 코드" class="qr-img" />
+              </div>
+              <span class="qr-caption">SCAN FOR GITHUB</span>
+            </div>
+
+            <div class="stub-bottom">
+              <div class="stub-code" id="stubCode">ROOM06-01 (A)</div>
+              <a href="#" target="_blank" rel="noopener noreferrer" class="stub-github-link" id="modalGithub">
+                GitHub 열기 &rarr;
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -7,12 +7,25 @@
   var lastCard = null;
 
   function openModal(card) {
+    var number = card.dataset.pass.replace("PASS ", "");
+
     lastCard = card;
-    document.getElementById("modalCatalog").textContent = card.dataset.pass + " · " + card.dataset.code;
+    document.getElementById("ticketLeftNo").textContent = "NO. " + number + " · ROOM 06";
+    document.getElementById("ticketPassBadge").textContent = card.dataset.pass;
     document.getElementById("modalTitle").textContent = card.dataset.name;
     document.getElementById("modalSubtitle").textContent = card.dataset.role;
-    document.getElementById("modalWork").textContent = card.dataset.work;
+    document.getElementById("modalNote").textContent = "";
+    document.getElementById("modalDept").textContent = "ROOM 06";
+    document.getElementById("modalDuty").textContent = card.dataset.work;
+    document.getElementById("modalYear").textContent = "2026";
+    document.getElementById("stubCode").textContent = card.dataset.code;
     document.getElementById("modalGithub").href = "https://github.com/" + card.dataset.github;
+
+    var qr = document.getElementById("modalQrImg");
+    qr.src = "https://api.qrserver.com/v1/create-qr-code/?size=160x160&margin=4&color=102f27&bgcolor=f2ebdd&data=" +
+      encodeURIComponent("https://github.com/" + card.dataset.github);
+    qr.alt = card.dataset.name + " GitHub 프로필 QR 코드";
+
     modal.classList.add("open");
     closeButton.focus();
   }
