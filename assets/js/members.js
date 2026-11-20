@@ -22,8 +22,7 @@
     document.getElementById("modalGithub").href = "https://github.com/" + card.dataset.github;
 
     var qr = document.getElementById("modalQrImg");
-    qr.src = "https://api.qrserver.com/v1/create-qr-code/?size=160x160&margin=4&color=102f27&bgcolor=f2ebdd&data=" +
-      encodeURIComponent("https://github.com/" + card.dataset.github);
+    qr.src = "assets/images/qr-" + card.closest(".badge-slot").id + ".svg";
     qr.alt = card.dataset.name + " GitHub 프로필 QR 코드";
 
     modal.classList.add("open");
