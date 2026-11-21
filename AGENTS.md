@@ -71,6 +71,18 @@
 
 `.reel`은 `index.html`만 쓴다. 사진 아래에 설명 문장을 붙이지 않고, 그 사진이 팀의 작업인 것처럼 적지 않는다. 메인 제목의 글자는 사진 창이다. 사진은 `assets/images/`에 두고, 글자 위 어두운 막은 `--ink`를 섞은 단색이다. 그 사진은 팀원이 아니다.
 
+기록은 과거가 위, 최신이 아래다. 이름 목록으로 만들지 않는다.
+
+```html
+<ol class="log">
+  <li class="log__row">
+    <time class="log__date" datetime="2026-10-29">2026.10.29</time>
+    <h2 class="log__title">팀 구성</h2>
+    <p class="log__meta">회의</p>
+  </li>
+</ol>
+```
+
 작업도 같은 줄이다. 이미지가 있으면 줄 아래 `figure.frame`에 두고, `alt`를 쓴다. 파일은 `assets/images/`. 외부 주소를 바로 걸지 않는다.
 
 ```html
