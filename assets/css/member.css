@@ -1,0 +1,794 @@
+/* 팀원 프로필 카드 (members.html 전용) */
+
+/* 페이지 바탕 */
+[data-page="members"] .site-header {
+  border-bottom: 1px solid var(--line);
+}
+
+[data-page="members"] .site-header .site-nav a {
+  position: relative;
+}
+
+[data-page="members"] .site-header .site-nav a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.45rem;
+  height: 2px;
+  background: var(--gold);
+}
+
+[data-page="members"] .page {
+  width: 100%;
+  max-width: 75rem;
+  margin-inline: auto;
+  padding-top: clamp(2.5rem, 5vw, 4rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+/* 제목 상자 */
+.exhibition-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border: 1px solid var(--line);
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.exhibition-hero h1 {
+  font-size: clamp(2.4rem, 4.8vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+/* 구분 버튼 줄 */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.filter-btn {
+  min-height: 2.75rem;
+  padding: 0.42rem 0.95rem;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--muted);
+  color: var(--ink);
+}
+
+.filter-btn.active {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.exhibit-count {
+  color: var(--muted);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 19.5rem), 1fr));
+  gap: 2.25rem 1.75rem;
+}
+
+/* 줄에 걸려 있는 카드 한 칸 */
+.badge-slot {
+  display: flex;
+  flex-direction: column;
+}
+
+.badge-slot[hidden] {
+  display: none;
+}
+
+/* 카드 위를 가로지르는 줄과 클립 */
+.hang-rail {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.625rem;
+  margin-bottom: 2px;
+  pointer-events: none;
+}
+
+.hang-rail::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: -0.875rem;
+  right: -0.875rem;
+  height: 1px;
+  background: color-mix(in srgb, var(--muted) 45%, transparent);
+}
+
+.hang-clip {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(-2px);
+  transition: transform 0.25s ease;
+}
+
+.hang-clip::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+.hang-clip::after {
+  content: "";
+  width: 1.5px;
+  height: 13px;
+  margin-top: -1px;
+  background: var(--gold);
+}
+
+.badge-slot:hover .hang-clip {
+  transform: translateY(1px);
+}
+
+/* 카드 전체 */
+.id-card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transform-origin: top center;
+  transition: transform 0.25s ease;
+}
+
+.id-card:hover {
+  transform: translateY(-4px) rotate(-0.4deg);
+}
+
+/* 위쪽 진한 녹색 띠 */
+.pass-strip {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 0.85rem;
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+}
+
+.pass-strip::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  width: 24px;
+  height: 4px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg) 75%, transparent);
+  transform: translateX(-50%);
+}
+
+.pass-dept {
+  color: var(--gold);
+}
+
+/* 카드 본체 */
+.student-id-body {
+  display: grid;
+  grid-template-columns: 1fr 2.625rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-top: 0;
+  border-right: 0;
+  background: color-mix(in srgb, var(--ink) 4%, var(--bg));
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.id-card:hover .student-id-body,
+.id-card:focus-visible .student-id-body {
+  border-color: var(--gold);
+  box-shadow: 0 10px 22px -12px color-mix(in srgb, var(--ink) 30%, transparent);
+}
+
+.id-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.9rem;
+  padding: 0.95rem;
+}
+
+/* 사진 자리 */
+.photo-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--ink) 8%, var(--bg));
+}
+
+.portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.id-card:hover .portrait-img {
+  transform: scale(1.03);
+}
+
+.monogram-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+}
+
+.monogram-char {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.monogram-sub {
+  margin-top: 0.4rem;
+  color: var(--muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+}
+
+.inspect-hint {
+  position: absolute;
+  right: 0.55rem;
+  bottom: 0.55rem;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--gold);
+  background: var(--bg);
+  font-size: 0.7rem;
+  font-weight: 700;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.id-card:hover .inspect-hint,
+.id-card:focus-visible .inspect-hint {
+  opacity: 1;
+  transform: none;
+}
+
+/* 이름, 번호 줄 */
+.id-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.id-field {
+  padding-bottom: 0.22rem;
+  border-bottom: 1px solid var(--muted);
+}
+
+.id-field-value {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.4rem;
+  font-size: 1.0625rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.id-field-role {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.id-field-label {
+  margin-top: 0.18rem;
+  color: var(--muted);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+/* 아래쪽 연도와 동그라미 */
+.id-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.id-year-block {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.id-year {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.id-dept-sub {
+  margin-top: 0.15rem;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.circle-emblem {
+  position: relative;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 3.375rem;
+  height: 3.375rem;
+  border: 1px solid var(--muted);
+  border-radius: 50%;
+}
+
+.circle-emblem::before {
+  content: "";
+  position: absolute;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+}
+
+.circle-emblem span {
+  position: relative;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* 오른쪽 세로 띠 */
+.id-side-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 0;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  writing-mode: vertical-rl;
+  user-select: none;
+}
+
+/* 상세 창: 박물관 티켓 */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: color-mix(in srgb, var(--ink) 60%, transparent);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+}
+
+.modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* drop-shadow로 실제 잘린 원 모양을 따라 그림자 생성 */
+.ticket-wrapper {
+  max-width: 740px;
+  width: 100%;
+  filter: drop-shadow(0 18px 30px color-mix(in srgb, var(--ink) 32%, transparent));
+  transform: translateY(10px);
+  transition: transform 0.22s ease;
+}
+
+.modal-backdrop.open .ticket-wrapper {
+  transform: translateY(0);
+}
+
+/* mask-image를 이용해 절취선 위·아래 반원 및 네 모서리를 실제로 잘라냄 */
+.ticket-modal {
+  display: grid;
+  grid-template-columns: 46px 1fr 205px;
+  width: 100%;
+  background-color: var(--bg);
+  position: relative;
+  /* 절취선 위치(우측에서 205px 지점) 위·아래에 반지름 10px 반원 구멍 뚫기 */
+  -webkit-mask-image:
+    radial-gradient(circle at calc(100% - 205px) 0, transparent 10px, #000 10.5px),
+    radial-gradient(circle at calc(100% - 205px) 100%, transparent 10px, #000 10.5px),
+    radial-gradient(circle at 0 0, transparent 8px, #000 8.5px),
+    radial-gradient(circle at 0 100%, transparent 8px, #000 8.5px),
+    radial-gradient(circle at 100% 0, transparent 8px, #000 8.5px),
+    radial-gradient(circle at 100% 100%, transparent 8px, #000 8.5px);
+  -webkit-mask-composite: destination-in;
+  mask-image:
+    radial-gradient(circle at calc(100% - 205px) 0, transparent 10px, #000 10.5px),
+    radial-gradient(circle at calc(100% - 205px) 100%, transparent 10px, #000 10.5px),
+    radial-gradient(circle at 0 0, transparent 8px, #000 8.5px),
+    radial-gradient(circle at 0 100%, transparent 8px, #000 8.5px),
+    radial-gradient(circle at 100% 0, transparent 8px, #000 8.5px),
+    radial-gradient(circle at 100% 100%, transparent 8px, #000 8.5px);
+  mask-composite: intersect;
+}
+
+/* 1. 요청사항 1: 짙은 초록색(--ink) 좌측 일련번호 스트립 */
+.ticket-left-strip {
+  background-color: var(--ink);
+  color: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.15rem 0;
+  user-select: none;
+}
+
+.ticket-left-strip::before,
+.ticket-left-strip::after {
+  content: "◆";
+  font-size: 0.55rem;
+  color: var(--gold);
+}
+
+.ticket-left-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--bg);
+}
+
+/* 2. 티켓 중앙 본권 (박물관 관람권 스타일 퀄업) */
+.ticket-center {
+  padding: 1.35rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background-image: radial-gradient(color-mix(in srgb, var(--ink) 4.5%, transparent) 1px, transparent 0);
+  background-size: 12px 12px;
+}
+
+/* 빈티지 티켓 이중 프레임 박스 */
+.ticket-frame-box {
+  border: 1.5px solid var(--accent);
+  background-color: var(--bg);
+  padding: 0.25rem;
+  position: relative;
+}
+
+.ticket-frame-inner {
+  border: 1px solid var(--gold);
+  padding: 1rem 1.2rem;
+  position: relative;
+}
+
+.ticket-kicker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: var(--gold);
+  margin-bottom: 0.45rem;
+}
+
+.ticket-stars {
+  letter-spacing: 0.25em;
+  color: var(--accent);
+  font-size: 0.65rem;
+}
+
+.ticket-name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.ticket-name {
+  font-size: clamp(1.7rem, 3vw, 2.15rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.ticket-badge-pill {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.55rem;
+  background-color: var(--accent);
+  color: var(--bg);
+}
+
+.ticket-role {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-top: 0.25rem;
+}
+
+.ticket-note {
+  margin-top: 0.75rem;
+  padding-top: 0.7rem;
+  border-top: 1px dashed var(--line);
+  font-size: 0.87rem;
+  color: var(--ink);
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+.ticket-note:empty {
+  display: none;
+}
+
+.ticket-notice {
+  margin-top: 0.65rem;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* 티켓 하단 3단 구획 */
+.ticket-meta-row {
+  display: grid;
+  grid-template-columns: 0.95fr 1.35fr 0.7fr;
+  border: 1px solid var(--ink);
+  background-color: var(--bg);
+}
+
+.ticket-cell {
+  padding: 0.6rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ticket-cell + .ticket-cell {
+  border-left: 1px solid var(--ink);
+}
+
+.ticket-cell-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 0.15rem;
+}
+
+.ticket-cell-value {
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: var(--ink);
+  word-break: keep-all;
+  line-height: 1.25;
+}
+
+/* 3. 티켓 우측 절취부(스텁): 절취선 + 스캔 QR */
+.ticket-stub {
+  border-left: 1.5px dashed var(--muted);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  background-color: color-mix(in srgb, var(--ink) 6%, var(--bg));
+  padding: 1.25rem 1.05rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  position: relative;
+}
+
+.stub-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stub-tag {
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.modal-close {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  width: 26px;
+  height: 26px;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.modal-close:hover {
+  background-color: var(--ink);
+  color: var(--bg);
+}
+
+.qr-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0.35rem 0;
+}
+
+.qr-box {
+  background-color: var(--bg);
+  border: 1.5px solid var(--ink);
+  padding: 0.5rem;
+  position: relative;
+}
+
+.qr-img {
+  width: 112px;
+  height: 112px;
+  display: block;
+}
+
+.qr-caption {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.stub-bottom {
+  width: 100%;
+}
+
+.stub-code {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  margin-bottom: 0.45rem;
+}
+
+.stub-github-link {
+  display: inline-block;
+  width: 100%;
+  padding: 0.48rem 0.6rem;
+  background-color: var(--ink);
+  color: var(--bg);
+  text-decoration: none;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  transition: background-color 0.2s ease;
+}
+
+.stub-github-link:hover {
+  background-color: var(--accent);
+}
+
+/* 모바일 반응형 티켓 배치 */
+@media (max-width: 700px) {
+  .ticket-wrapper {
+    max-width: 410px;
+  }
+
+  .ticket-modal {
+    grid-template-columns: 1fr;
+    -webkit-mask-image: none;
+    mask-image: none;
+    border: 1px solid var(--ink);
+  }
+
+  .ticket-left-strip {
+    flex-direction: row;
+    padding: 0.55rem 1rem;
+  }
+
+  .ticket-left-text {
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+
+  .ticket-stub {
+    border-left: none;
+    border-top: 1.5px dashed var(--muted);
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .id-card,
+  .hang-clip,
+  .portrait-img,
+  .filter-btn,
+  .inspect-hint,
+  .ticket-wrapper {
+    transition: none;
+  }
+
+  .id-card:hover {
+    transform: none;
+  }
+}
