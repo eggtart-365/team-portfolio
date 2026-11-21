@@ -8,7 +8,6 @@
     { id: "members", href: "members.html", label: "팀원" },
     { id: "projects", href: "projects.html", label: "작업" },
     { id: "activities", href: "activities.html", label: "기록" },
-    { id: "faq", href: "faq.html", label: "질문" },
     { id: "contact", href: "contact.html", label: "연락" }
   ];
 

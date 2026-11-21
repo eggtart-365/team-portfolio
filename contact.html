@@ -15,8 +15,48 @@
     <div data-mount="header"></div>
     <main id="main" class="page pad" tabindex="-1">
       <h1>연락</h1>
+      <div class="prose">
+        <p>메일 <a href="mailto:room06@example.com">room06@example.com</a></p>
+      </div>
+      <form class="form" data-contact-form data-to="room06@example.com">
+        <div class="field">
+          <label class="label" for="name">이름</label>
+          <input class="input" id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label class="label" for="message">내용</label>
+          <textarea class="textarea" id="message" name="message" required></textarea>
+        </div>
+        <button class="button" type="submit">보내기</button>
+      </form>
+      <section class="contact-section" id="faq" aria-labelledby="faq-title">
+        <h2 class="contact-section__title" id="faq-title">질문</h2>
+        <div class="faq">
+          <details class="faq__item">
+            <summary>ROOM 06은 어떤 팀인가요?</summary>
+            <div class="faq__a">여섯 명이 모여 팀 포트폴리오 웹사이트를 함께 만드는 팀입니다. 팀원 소개는 <a href="members.html">팀원</a>에 있습니다.</div>
+          </details>
+          <details class="faq__item">
+            <summary>사이트는 무엇으로 만들었나요?</summary>
+            <div class="faq__a">HTML, CSS, JavaScript만 썼습니다. 데이터베이스나 서버 없이 GitHub Pages로 배포하는 정적 웹사이트입니다.</div>
+          </details>
+          <details class="faq__item">
+            <summary>여섯 명이 어떻게 함께 작업하나요?</summary>
+            <div class="faq__a">각자 맡은 기능을 따로 브랜치에서 만들고, Pull Request로 서로 리뷰한 뒤 합칩니다. Git, GitHub, SourceTree를 씁니다.</div>
+          </details>
+          <details class="faq__item">
+            <summary>메인 화면의 사진은 팀이 찍은 건가요?</summary>
+            <div class="faq__a">아니요. Unsplash License를 따르는 Unsplash 사진입니다. 출처는 저장소의 README에 있습니다.</div>
+          </details>
+          <details class="faq__item">
+            <summary>코드를 볼 수 있나요?</summary>
+            <div class="faq__a">네. <a href="https://github.com/eggtart-365/team-portfolio">GitHub 저장소</a>에 모두 공개되어 있습니다.</div>
+          </details>
+        </div>
+      </section>
     </main>
     <div data-mount="footer"></div>
     <script src="assets/js/layout.js"></script>
+    <script src="assets/js/contact.js"></script>
   </body>
 </html>

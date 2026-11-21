@@ -234,6 +234,21 @@ a.index-list__row:focus-visible .index-list__meta {
   color: var(--muted);
 }
 
+.faq__a a {
+  text-underline-offset: 0.18em;
+}
+
+.contact-section {
+  margin-top: clamp(4.5rem, 12vh, 7rem);
+}
+
+.contact-section__title {
+  font-size: clamp(2.4rem, 5vw, 4.25rem);
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+}
+
 .form {
   display: grid;
   gap: 1.5rem;
