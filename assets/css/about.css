@@ -1,0 +1,192 @@
+/* 소개 페이지 전용 (about.html) */
+
+[data-page="about"] .page {
+  width: 100%;
+  max-width: 75rem;
+  margin-inline: auto;
+  padding-top: clamp(2.5rem, 5vw, 4rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+[data-page="about"] .page h1 {
+  font-size: clamp(2.4rem, 4.8vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.about {
+  margin-top: 2.5rem;
+}
+
+.about__section + .about__section {
+  margin-top: 2.75rem;
+}
+
+.about__label {
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.about__title {
+  margin-top: 0.5rem;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.about__section:first-child .about__title {
+  font-size: clamp(1.75rem, 3.2vw, 2.4rem);
+}
+
+.about__lead {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.about__placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  height: clamp(11rem, 18vw, 17rem);
+  margin-top: 1.25rem;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--ink) 8%, var(--bg));
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.about__photo {
+  width: min(100%, 36rem);
+  margin: 1.25rem auto 0;;
+  border: 1px solid var(--line);
+}
+
+.about__photo img {
+  width: 100%;
+  height: auto;
+}
+
+.about__icon {
+  width: 2rem;
+  height: 2rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.about__concepts,
+.about__links {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about__concepts {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.about__concept {
+  padding: 0.9rem 0.5rem;
+  border: 1px solid var(--line);
+  text-align: center;
+}
+
+.about__concept span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.about__concept strong {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 1.0625rem;
+  font-weight: 800;
+}
+
+.about__steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about__step {
+  padding-top: 0.45rem;
+  border-top: 3px solid color-mix(in srgb, var(--muted) 55%, var(--bg));
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.about__step:last-child {
+  border-top-color: var(--accent);
+}
+
+.about__links {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.about__link {
+  display: block;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--ink) 4%, var(--bg));
+  color: inherit;
+  text-decoration: none;
+}
+
+.about__link .about__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.about__link strong {
+  display: block;
+  margin-top: 0.8rem;
+  font-size: 1.0625rem;
+  font-weight: 800;
+}
+
+.about__link span {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.about__link:hover,
+.about__link:focus-visible {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.about__link:hover span,
+.about__link:focus-visible span {
+  color: var(--bg);
+}
+
+@media (max-width: 640px) {
+  .about__links {
+    grid-template-columns: 1fr;
+  }
+}
