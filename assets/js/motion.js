@@ -1,6 +1,40 @@
 "use strict";
 
 (function () {
+  var intro = document.querySelector(".intro");
+  var skipIntro = document.documentElement.classList.contains("intro-skip");
+
+  function unlockIntro() {
+    document.documentElement.classList.add("intro-skip");
+    try {
+      sessionStorage.setItem("room06-intro", "1");
+    } catch (e) {}
+    if (intro && intro.parentNode) intro.remove();
+    [".site-header", "main", ".site-footer"].forEach(function (selector) {
+      var el = document.querySelector(selector);
+      if (el) el.removeAttribute("inert");
+    });
+  }
+
+  if (intro && !skipIntro) {
+    [".site-header", "main", ".site-footer"].forEach(function (selector) {
+      var el = document.querySelector(selector);
+      if (el) el.setAttribute("inert", "");
+    });
+    var closed = false;
+    function closeIntro(event) {
+      if (closed) return;
+      if (event && event.animationName && event.animationName !== "intro-out") return;
+      closed = true;
+      unlockIntro();
+      document.dispatchEvent(new CustomEvent("intro:done"));
+    }
+    intro.addEventListener("animationend", closeIntro);
+    window.setTimeout(function () {
+      closeIntro();
+    }, 4500);
+  }
+
   if (!window.gsap) return;
 
   var mm = gsap.matchMedia();
@@ -10,7 +44,14 @@
 
     var title = document.querySelector(".hero h1");
     if (title) {
-      gsap.from(title, { opacity: 0, duration: 0.8, ease: "power2.out" });
+      function playTitle() {
+        gsap.from(title, { opacity: 0, duration: 0.8, ease: "power2.out" });
+      }
+      if (intro && !skipIntro) {
+        document.addEventListener("intro:done", playTitle, { once: true });
+      } else {
+        playTitle();
+      }
 
       if (window.ScrollTrigger) {
         gsap.to(title, {

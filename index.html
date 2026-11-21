@@ -2,22 +2,37 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8">
+    <script>
+      (function () {
+        try {
+          if (sessionStorage.getItem("room06-intro") === "1" || matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            document.documentElement.classList.add("intro-skip");
+          }
+        } catch (e) {}
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ROOM 06</title>
     <meta name="description" content="ROOM 06">
     <meta name="theme-color" content="#f2ebdd">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-gov-dynamic-subset.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap">
     <link rel="stylesheet" href="assets/css/tokens.css">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/components.css">
   </head>
   <body data-page="home">
+    <div class="intro" aria-hidden="true">
+      <p class="intro__line">Room 06</p>
+    </div>
     <div data-mount="header"></div>
     <main id="main" tabindex="-1">
       <section class="hero pad">
         <p class="hero__note">여섯 명이 함께 만드는 팀 포트폴리오</p>
-        <h1>ROOM 06</h1>
+        <h1 aria-label="ROOM 06">
+          <span class="win win--1" aria-hidden="true"><span class="win__a">R</span><span class="win__b">R</span></span><span class="win win--2" aria-hidden="true"><span class="win__a">O</span><span class="win__b">O</span></span><span class="win win--3" aria-hidden="true"><span class="win__a">O</span><span class="win__b">O</span></span><span class="win win--4" aria-hidden="true"><span class="win__a">M</span><span class="win__b">M</span></span> <span class="win win--5" aria-hidden="true"><span class="win__a">0</span><span class="win__b">0</span></span><span class="win win--6" aria-hidden="true"><span class="win__a">6</span><span class="win__b">6</span></span>
+        </h1>
       </section>
       <div class="reel">
         <div class="reel__track">

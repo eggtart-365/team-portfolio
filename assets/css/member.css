@@ -5,10 +5,6 @@
   border-bottom: 1px solid var(--line);
 }
 
-[data-page="members"] .site-mark {
-  letter-spacing: 0.08em;
-}
-
 [data-page="members"] .site-header .site-nav a {
   position: relative;
 }
