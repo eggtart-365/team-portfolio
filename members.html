@@ -308,6 +308,11 @@
     </main>
     <!-- 상세 보기: 박물관 티켓 모달 -->
     <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-stage">
+      <aside class="dossier" id="dossier" aria-label="팀원 정보">
+        <p class="dossier-name" id="dossierName"></p>
+        <div class="dossier-body" id="dossierBody"></div>
+      </aside>
       <div class="ticket-wrapper">
         <div class="ticket-modal">
           <!-- 1. 짙은 초록색 좌측 세로 티켓 번호 -->
@@ -372,6 +377,7 @@
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
     <div data-mount="footer"></div>
