@@ -430,6 +430,10 @@ a.index-list__row:focus-visible .index-list__meta {
   color: var(--muted);
 }
 
+.faq__a a {
+  text-underline-offset: 0.18em;
+}
+
 .form {
   display: grid;
   gap: 1.5rem;

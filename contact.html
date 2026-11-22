@@ -16,8 +16,23 @@
     <div data-mount="header"></div>
     <main id="main" class="page pad" tabindex="-1">
       <h1>연락</h1>
+      <div class="prose">
+        <p>메일 <a href="mailto:room06@example.com">room06@example.com</a></p>
+      </div>
+      <form class="form" data-contact-form data-to="room06@example.com">
+        <div class="field">
+          <label class="label" for="name">이름</label>
+          <input class="input" id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label class="label" for="message">내용</label>
+          <textarea class="textarea" id="message" name="message" required></textarea>
+        </div>
+        <button class="button" type="submit">보내기</button>
+      </form>
     </main>
     <div data-mount="footer"></div>
     <script src="assets/js/layout.js"></script>
+    <script src="assets/js/contact.js"></script>
   </body>
 </html>
