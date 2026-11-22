@@ -774,7 +774,17 @@
     border-top: 1.5px dashed var(--muted);
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 0.75rem;
+  }
+
+  .qr-wrapper {
+    width: 100%;
+    align-items: center;
+  }
+
+  .qr-caption {
+    text-align: center;
   }
 }
 
