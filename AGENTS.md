@@ -2,7 +2,7 @@
 
 페이지를 만들기 전에 이 파일을 읽는다. 화면 문구로 규칙을 설명하지 않는다.
 
-정적 HTML, CSS, JavaScript만 쓴다. npm, React, Bootstrap, Tailwind를 넣지 않는다. 색은 `tokens.css` 변수만 쓴다. 글꼴은 Pretendard GOV 하나다. 다른 글꼴, 인라인 스타일, 카드, 그림자, 그라데이션, 번호 라벨, 영문 장식을 추가하지 않는다.
+정적 HTML, CSS, JavaScript만 쓴다. npm, React, Bootstrap, Tailwind를 넣지 않는다. 색은 `tokens.css` 변수만 쓴다. 본문 글꼴은 Pretendard GOV 하나다. 헤더, 푸터, 진입 화면만 Pinyon Script를 쓴다. 다른 글꼴, 인라인 스타일, 카드, 그림자, 그라데이션, 번호 라벨, 영문 장식을 추가하지 않는다.
 
 헤더와 푸터는 `assets/js/layout.js`가 그린다. HTML에 메뉴를 다시 쓰지 않는다. 페이지는 저장소 루트에 둔다.
 
@@ -23,7 +23,8 @@
 | `members.html` | 김하영. 아래 id는 유지 |
 | `projects.html` | 김선재. 상세는 김하영, 파일명 `project-이름.html`, `data-page="projects"` |
 | `activities.html` | 김병찬 |
-| `contact.html` | 박찬준. 질문은 `#faq` 안에 둔다 |
+| `faq.html` | 박찬준 |
+| `contact.html` | 박찬준 |
 
 앵커: `kim-taehyun` `kim-hayoung` `park-chanjun` `woo-jungwoo` `kim-seonjae` `kim-byeongchan`
 
@@ -39,6 +40,7 @@
     <meta name="theme-color" content="#f2ebdd">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-gov-dynamic-subset.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap">
     <link rel="stylesheet" href="assets/css/tokens.css">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/components.css">
@@ -57,7 +59,7 @@
 </html>
 ```
 
-`data-page`는 `home` `about` `members` `projects` `activities` `contact` 중 하나다. 제목 `h1`은 페이지당 하나.
+`data-page`는 `home` `about` `members` `projects` `activities` `faq` `contact` 중 하나다. 제목 `h1`은 페이지당 하나.
 
 이름 목록은 메인의 줄과 같다. 오른쪽 작은 글은 직책만 쓴다. 담당 페이지 이름을 넣지 않는다. 메인 화면의 이름 줄에는 오른쪽 글을 두지 않는다.
 
@@ -67,7 +69,19 @@
 </a>
 ```
 
-`.reel`은 `index.html`만 쓴다. 사진 아래에 설명 문장을 붙이지 않고, 그 사진이 팀의 작업인 것처럼 적지 않는다.
+`.reel`은 `index.html`만 쓴다. 사진 아래에 설명 문장을 붙이지 않고, 그 사진이 팀의 작업인 것처럼 적지 않는다. 메인 제목의 글자는 사진 창이다. 사진은 `assets/images/`에 두고, 글자 위 어두운 막은 `--ink`를 섞은 단색이다. 그 사진은 팀원이 아니다.
+
+기록은 과거가 위, 최신이 아래다. 이름 목록으로 만들지 않는다.
+
+```html
+<ol class="log">
+  <li class="log__row">
+    <time class="log__date" datetime="2026-10-29">2026.10.29</time>
+    <h2 class="log__title">팀 구성</h2>
+    <p class="log__meta">회의</p>
+  </li>
+</ol>
+```
 
 작업도 같은 줄이다. 이미지가 있으면 줄 아래 `figure.frame`에 두고, `alt`를 쓴다. 파일은 `assets/images/`. 외부 주소를 바로 걸지 않는다.
 

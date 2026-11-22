@@ -7,42 +7,372 @@
     <meta name="theme-color" content="#f2ebdd">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-gov-dynamic-subset.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap">
     <link rel="stylesheet" href="assets/css/tokens.css">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/member.css">
   </head>
   <body data-page="members">
     <div data-mount="header"></div>
     <main id="main" class="page pad" tabindex="-1">
-      <h1>팀원</h1>
-      <div class="index-list">
-        <section class="index-list__row" id="kim-taehyun" aria-labelledby="name-kim-taehyun">
-          <h2 class="index-list__title" id="name-kim-taehyun">김태현</h2>
-          <p class="index-list__meta">팀장</p>
-        </section>
-        <section class="index-list__row" id="kim-hayoung" aria-labelledby="name-kim-hayoung">
-          <h2 class="index-list__title" id="name-kim-hayoung">김하영</h2>
-          <p class="index-list__meta">팀원</p>
-        </section>
-        <section class="index-list__row" id="park-chanjun" aria-labelledby="name-park-chanjun">
-          <h2 class="index-list__title" id="name-park-chanjun">박찬준</h2>
-          <p class="index-list__meta">팀원</p>
-        </section>
-        <section class="index-list__row" id="woo-jungwoo" aria-labelledby="name-woo-jungwoo">
-          <h2 class="index-list__title" id="name-woo-jungwoo">우정우</h2>
-          <p class="index-list__meta">팀원</p>
-        </section>
-        <section class="index-list__row" id="kim-seonjae" aria-labelledby="name-kim-seonjae">
-          <h2 class="index-list__title" id="name-kim-seonjae">김선재</h2>
-          <p class="index-list__meta">팀원</p>
-        </section>
-        <section class="index-list__row" id="kim-byeongchan" aria-labelledby="name-kim-byeongchan">
-          <h2 class="index-list__title" id="name-kim-byeongchan">김병찬</h2>
-          <p class="index-list__meta">팀원</p>
-        </section>
+      <section class="exhibition-hero">
+        <div>
+          <span class="eyebrow">MUSEUM STAFF · ID CARD GALLERY</span>
+          <h1>팀원</h1>
+        </div>
+      </section>
+      <div class="filter-bar">
+        <div class="filter-tabs" role="group" aria-label="구분">
+          <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">전체 (6)</button>
+          <button class="filter-btn" type="button" data-filter="leader" aria-pressed="false">팀장</button>
+          <button class="filter-btn" type="button" data-filter="member" aria-pressed="false">팀원</button>
+        </div>
+        <span class="exhibit-count" id="exhibitCount" aria-live="polite">DISPLAYING 6 STAFF CARDS</span>
       </div>
+      <section class="gallery-grid" id="galleryGrid" aria-label="팀원">
+        <div class="badge-slot" id="kim-taehyun" data-category="leader">
+          <div class="hang-rail" aria-hidden="true">
+            <span class="hang-clip"></span>
+          </div>
+          <article class="id-card" tabindex="0" role="button" aria-label="김태현 상세 보기" data-pass="PASS 01" data-code="ROOM06-01" data-name="김태현" data-role="팀장" data-work="메인 페이지 · 디자인 시스템" data-github="eggtart-365">
+            <div class="pass-strip">
+              <span>PASS 01</span>
+              <span class="pass-dept">ROOM 06</span>
+            </div>
+            <div class="student-id-body">
+              <div class="id-main">
+                <div class="photo-box">
+                  <div class="monogram-placeholder">
+                    <span class="monogram-char">태현</span>
+                    <span class="monogram-sub">PHOTO</span>
+                  </div>
+                  <span class="inspect-hint">상세 보기 +</span>
+                </div>
+                <div class="id-fields">
+                  <div class="id-field">
+                    <div class="id-field-value">
+                      <span>NAME</span>
+                      <span class="id-field-role">팀장</span>
+                    </div>
+                  </div>
+                  <div class="id-field">
+                    <div class="id-field-value">
+                      <span>담당 파트</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="id-bottom">
+                  <div class="id-year-block">
+                    <span class="id-year">2026</span>
+                    <span class="id-dept-sub">LEADER</span>
+                  </div>
+                  <div class="circle-emblem" aria-hidden="true">
+                    <span>R06</span>
+                  </div>
+                </div>
+              </div>
+              <div class="id-side-strip" aria-hidden="true">ROOM 06 MUSEUM</div>
+            </div>
+          </article>
+        </div>
+        <div class="badge-slot" id="kim-hayoung" data-category="member">
+          <div class="hang-rail" aria-hidden="true">
+            <span class="hang-clip"></span>
+          </div>
+          <article class="id-card" tabindex="0" role="button" aria-label="김하영 상세 보기" data-pass="PASS 02" data-code="ROOM06-02" data-name="김하영" data-role="팀원" data-work="팀원 프로필 · 프로젝트 상세 페이지" data-github="hilt01">
+            <div class="pass-strip">
+              <span>PASS 02</span>
+              <span class="pass-dept">ROOM 06</span>
+            </div>
+            <div class="student-id-body">
+              <div class="id-main">
+                <div class="photo-box">
+                  <div class="monogram-placeholder">
+                    <span class="monogram-char">하영</span>
+                    <span class="monogram-sub">PHOTO</span>
+                  </div>
+                  <span class="inspect-hint">상세 보기 +</span>
+                </div>
+                <div class="id-fields">
+                  <div class="id-field">
+                    <div class="id-field-value">
+                      <span>NAME</span>
+                      <span class="id-field-role">팀원</span>
+                    </div>
+                  </div>
+                  <div class="id-field">
+                    <div class="id-field-value">
+                      <span>담당 파트</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="id-bottom">
+                  <div class="id-year-block">
+                    <span class="id-year">2026</span>
+                    <span class="id-dept-sub">MEMBER</span>
+                  </div>
+                  <div class="circle-emblem" aria-hidden="true">
+                    <span>R06</span>
+                  </div>
+                </div>
+              </div>
+              <div class="id-side-strip" aria-hidden="true">ROOM 06 MUSEUM</div>
+            </div>
+          </article>
+        </div>
+        <div class="badge-slot" id="park-chanjun" data-category="member">
+          <div class="hang-rail" aria-hidden="true">
+            <span class="hang-clip"></span>
+          </div>
+          <article class="id-card" tabindex="0" role="button" aria-label="박찬준 상세 보기" data-pass="PASS 03" data-code="ROOM06-03" data-name="박찬준" data-role="팀원" data-work="FAQ · 연락처 및 문의 · 이미지 및 아이콘 관리" data-github="pastedesoterik">
+            <div class="pass-strip">
+              <span>PASS 03</span>
+              <span class="pass-dept">ROOM 06</span>
+            </div>
+            <div class="student-id-body">
+              <div class="id-main">
+                <div class="photo-box">
+                  <div class="monogram-placeholder">
+                    <span class="monogram-char">찬준</span>
+                    <span class="monogram-sub">PHOTO</span>
+                  </div>
+                  <span class="inspect-hint">상세 보기 +</span>
+                </div>
+                <div class="id-fields">
+                  <div class="id-field">
+                    <div class="id-field-value">
+                      <span>NAME</span>
+                      <span class="id-field-role">팀원</span>
+                    </div>
+                  </div>
+                  <div class="id-field">
+                    <div class="id-field-value">
+                      <span>담당 파트</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="id-bottom">
+                  <div class="id-year-block">
+                    <span class="id-year">2026</span>
+                    <span class="id-dept-sub">MEMBER</span>
+                  </div>
+                  <div class="circle-emblem" aria-hidden="true">
+                    <span>R06</span>
+                  </div>
+                </div>
+              </div>
+              <div class="id-side-strip" aria-hidden="true">ROOM 06 MUSEUM</div>
+            </div>
+          </article>
+        </div>
+        <div class="badge-slot" id="woo-jungwoo" data-category="member">
+          <div class="hang-rail" aria-hidden="true">
+            <span class="hang-clip"></span>
+          </div>
+          <article class="id-card" tabindex="0" role="button" aria-label="우정우 상세 보기" data-pass="PASS 04" data-code="ROOM06-04" data-name="우정우" data-role="팀원" data-work="팀 소개 페이지 · 웹 접근성 개선" data-github="jw0827">
+            <div class="pass-strip">
+              <span>PASS 04</span>
+              <span class="pass-dept">ROOM 06</span>
+            </div>
+            <div class="student-id-body">
+              <div class="id-main">
+                <div class="photo-box">
+                  <div class="monogram-placeholder">
+                    <span class="monogram-char">정우</span>
+                    <span class="monogram-sub">PHOTO</span>
+                  </div>
+                  <span class="inspect-hint">상세 보기 +</span>
+                </div>
+                <div class="id-fields">
+                  <div class="id-field">
+                    <div class="id-field-value">
+                      <span>NAME</span>
+                      <span class="id-field-role">팀원</span>
+                    </div>
+                  </div>
+                  <div class="id-field">
+                    <div class="id-field-value">
+                      <span>담당 파트</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="id-bottom">
+                  <div class="id-year-block">
+                    <span class="id-year">2026</span>
+                    <span class="id-dept-sub">MEMBER</span>
+                  </div>
+                  <div class="circle-emblem" aria-hidden="true">
+                    <span>R06</span>
+                  </div>
+                </div>
+              </div>
+              <div class="id-side-strip" aria-hidden="true">ROOM 06 MUSEUM</div>
+            </div>
+          </article>
+        </div>
+        <div class="badge-slot" id="kim-seonjae" data-category="member">
+          <div class="hang-rail" aria-hidden="true">
+            <span class="hang-clip"></span>
+          </div>
+          <article class="id-card" tabindex="0" role="button" aria-label="김선재 상세 보기" data-pass="PASS 05" data-code="ROOM06-05" data-name="김선재" data-role="팀원" data-work="프로젝트 갤러리 · 사용성 및 화면 테스트" data-github="ktjswo">
+            <div class="pass-strip">
+              <span>PASS 05</span>
+              <span class="pass-dept">ROOM 06</span>
+            </div>
+            <div class="student-id-body">
+              <div class="id-main">
+                <div class="photo-box">
+                  <div class="monogram-placeholder">
+                    <span class="monogram-char">선재</span>
+                    <span class="monogram-sub">PHOTO</span>
+                  </div>
+                  <span class="inspect-hint">상세 보기 +</span>
+                </div>
+                <div class="id-fields">
+                  <div class="id-field">
+                    <div class="id-field-value">
+                      <span>NAME</span>
+                      <span class="id-field-role">팀원</span>
+                    </div>
+                  </div>
+                  <div class="id-field">
+                    <div class="id-field-value">
+                      <span>담당 파트</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="id-bottom">
+                  <div class="id-year-block">
+                    <span class="id-year">2026</span>
+                    <span class="id-dept-sub">MEMBER</span>
+                  </div>
+                  <div class="circle-emblem" aria-hidden="true">
+                    <span>R06</span>
+                  </div>
+                </div>
+              </div>
+              <div class="id-side-strip" aria-hidden="true">ROOM 06 MUSEUM</div>
+            </div>
+          </article>
+        </div>
+        <div class="badge-slot" id="kim-byeongchan" data-category="member">
+          <div class="hang-rail" aria-hidden="true">
+            <span class="hang-clip"></span>
+          </div>
+          <article class="id-card" tabindex="0" role="button" aria-label="김병찬 상세 보기" data-pass="PASS 06" data-code="ROOM06-06" data-name="김병찬" data-role="팀원" data-work="활동 기록 페이지 · GitHub Pages 배포" data-github="gimbyeongchan882-jpg">
+            <div class="pass-strip">
+              <span>PASS 06</span>
+              <span class="pass-dept">ROOM 06</span>
+            </div>
+            <div class="student-id-body">
+              <div class="id-main">
+                <div class="photo-box">
+                  <div class="monogram-placeholder">
+                    <span class="monogram-char">병찬</span>
+                    <span class="monogram-sub">PHOTO</span>
+                  </div>
+                  <span class="inspect-hint">상세 보기 +</span>
+                </div>
+                <div class="id-fields">
+                  <div class="id-field">
+                    <div class="id-field-value">
+                      <span>NAME</span>
+                      <span class="id-field-role">팀원</span>
+                    </div>
+                  </div>
+                  <div class="id-field">
+                    <div class="id-field-value">
+                      <span>담당 파트</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="id-bottom">
+                  <div class="id-year-block">
+                    <span class="id-year">2026</span>
+                    <span class="id-dept-sub">MEMBER</span>
+                  </div>
+                  <div class="circle-emblem" aria-hidden="true">
+                    <span>R06</span>
+                  </div>
+                </div>
+              </div>
+              <div class="id-side-strip" aria-hidden="true">ROOM 06 MUSEUM</div>
+            </div>
+          </article>
+        </div>
+      </section>
     </main>
+    <!-- 상세 보기: 박물관 티켓 모달 -->
+    <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="ticket-wrapper">
+        <div class="ticket-modal">
+          <!-- 1. 짙은 초록색 좌측 세로 티켓 번호 -->
+          <div class="ticket-left-strip">
+            <span class="ticket-left-text" id="ticketLeftNo">NO. 01 · ROOM 06</span>
+          </div>
+
+          <!-- 2. 중앙 티켓 본권 -->
+          <div class="ticket-center">
+            <div class="ticket-frame-box">
+              <div class="ticket-frame-inner">
+                <div class="ticket-kicker">
+                  <span>ROOM 06 MUSEUM TICKET</span>
+                  <span class="ticket-stars">★ ★ ★</span>
+                </div>
+
+                <div class="ticket-name-row">
+                  <h2 class="ticket-name" id="modalTitle">직원 이름</h2>
+                  <span class="ticket-badge-pill" id="ticketPassBadge">PASS 01</span>
+                </div>
+                <div class="ticket-role" id="modalSubtitle">담당 직책</div>
+                <p class="ticket-note" id="modalNote"></p>
+                <div class="ticket-notice">· ROOM 06 EXHIBITION STAFF ARCHIVE ·</div>
+              </div>
+            </div>
+
+            <div class="ticket-meta-row">
+              <div class="ticket-cell">
+                <span class="ticket-cell-label">DEPT · 부서</span>
+                <span class="ticket-cell-value" id="modalDept">-</span>
+              </div>
+              <div class="ticket-cell">
+                <span class="ticket-cell-label">DUTY · 담당</span>
+                <span class="ticket-cell-value" id="modalDuty">-</span>
+              </div>
+              <div class="ticket-cell">
+                <span class="ticket-cell-label">YEAR</span>
+                <span class="ticket-cell-value" id="modalYear">2026</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. 우측 절취부(스텁): 스캔 가능한 GitHub QR -->
+          <div class="ticket-stub">
+            <div class="stub-top">
+              <span class="stub-tag">✂ ADMIT ONE</span>
+              <button class="modal-close" id="modalClose" aria-label="티켓 닫기">&times;</button>
+            </div>
+
+            <div class="qr-wrapper">
+              <div class="qr-box">
+                <img id="modalQrImg" src="" alt="GitHub 프로필 QR 코드" class="qr-img" />
+              </div>
+              <span class="qr-caption">SCAN FOR GITHUB</span>
+            </div>
+
+            <div class="stub-bottom">
+              <div class="stub-code" id="stubCode">ROOM06-01 (A)</div>
+              <a href="#" target="_blank" rel="noopener noreferrer" class="stub-github-link" id="modalGithub">
+                GitHub 열기 &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div data-mount="footer"></div>
     <script src="assets/js/layout.js"></script>
+    <script src="assets/js/members.js"></script>
   </body>
 </html>

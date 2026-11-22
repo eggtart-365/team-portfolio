@@ -32,7 +32,8 @@
 | 프로젝트 갤러리           | `projects.html`   | 팀·개인 프로젝트 목록, 이미지, 상세 페이지 링크                |
 | 프로젝트 상세             | 프로젝트별 페이지 | 개별 프로젝트 설명, 사용 기술, 결과물 링크                     |
 | 활동 기록                 | `activities.html` | 회의 기록, 개발 과정, 활동 사진 또는 결과물                    |
-| 연락처 및 문의, FAQ       | `contact.html`    | 공개 가능한 연락 방법과 문의 안내, 자주 묻는 질문과 답         |
+| FAQ                       | `faq.html`        | 자주 묻는 질문과 답                                            |
+| 연락처 및 문의            | `contact.html`    | 공개 가능한 연락 방법과 문의 안내                              |
 | 공통 디자인 및 내비게이션 | 전체 페이지       | 공통 헤더·푸터, 페이지 이동 메뉴, 이미지·아이콘, 일관된 디자인 |
 
 페이지별 담당은 아래 역할 분담을 따릅니다. 공통 헤더·푸터·메뉴·스타일은 디자인 시스템 담당이 만들고, 각 페이지 담당자는 그 위에 자기 화면을 구현합니다.
@@ -128,7 +129,7 @@ PR에는 다음 내용을 포함합니다.
 
 ## 디자인 시스템
 
-공통 화면 규칙은 [AGENTS.md](AGENTS.md)에 있다. 페이지를 만들거나 AI에게 맡길 때 그 파일을 먼저 읽는다. 글꼴은 Pretendard GOV 하나다.
+공통 화면 규칙은 [AGENTS.md](AGENTS.md)에 있다. 페이지를 만들거나 AI에게 맡길 때 그 파일을 먼저 읽는다. 본문은 Pretendard GOV, 헤더와 푸터와 진입 화면은 Pinyon Script다.
 
 ## 실행 및 배포
 
@@ -141,9 +142,22 @@ PR에는 다음 내용을 포함합니다.
 
 | 자료                                                                      | 용도             | 라이선스                                         |
 | ------------------------------------------------------------------------- | ---------------- | ------------------------------------------------ |
-| [Pretendard GOV](https://github.com/orioncactus/pretendard)               | 글꼴             | SIL OFL 1.1                                      |
+| [Pretendard GOV](https://github.com/orioncactus/pretendard)               | 본문 글꼴        | SIL OFL 1.1                                      |
+| [Pinyon Script](https://fonts.google.com/specimen/Pinyon+Script)          | 헤더·푸터·진입 화면 | SIL OFL 1.1                                   |
 | [GSAP](https://gsap.com/community/standard-license/)                      | 메인 화면 움직임 | Standard License, 무료                           |
 | [건물 외관](https://images.unsplash.com/photo-1487958449943-2429e8be8625) | 메인 화면        | [Unsplash License](https://unsplash.com/license) |
 | [복도](https://images.unsplash.com/photo-1497366216548-37526070297c)      | 메인 화면        | [Unsplash License](https://unsplash.com/license) |
 | [유리 복도](https://images.unsplash.com/photo-1497366754035-f200968a6e72) | 메인 화면        | [Unsplash License](https://unsplash.com/license) |
 | [거실](https://images.unsplash.com/photo-1600607687939-ce8a6c25118c)      | 메인 화면        | [Unsplash License](https://unsplash.com/license) |
+| [뒷모습](https://images.unsplash.com/photo-1500917293891-ef795e70e1f6)    | 메인 제목        | [Unsplash License](https://unsplash.com/license) |
+| [테이블](https://images.unsplash.com/photo-1521737604893-d14cc237f11d)    | 메인 제목        | [Unsplash License](https://unsplash.com/license) |
+| [손](https://images.unsplash.com/photo-1517245386807-bb43f82c33c4)        | 메인 제목        | [Unsplash License](https://unsplash.com/license) |
+| [도면](https://images.unsplash.com/photo-1503387762-592deb58ef4e)         | 메인 제목        | [Unsplash License](https://unsplash.com/license) |
+| [회의실](https://images.unsplash.com/photo-1497366811353-6870744d04b2)    | 메인 제목        | [Unsplash License](https://unsplash.com/license) |
+| [대화](https://images.unsplash.com/photo-1522202176988-66273c2fd55f)      | 메인 제목        | [Unsplash License](https://unsplash.com/license) |
+| [창가](https://images.unsplash.com/photo-1501196354995-cbb51c65aaea)      | 메인 제목        | [Unsplash License](https://unsplash.com/license) |
+| [노트북](https://images.unsplash.com/photo-1519389950473-47ba0277781c)    | 메인 제목        | [Unsplash License](https://unsplash.com/license) |
+| [난간](https://images.unsplash.com/photo-1521119989659-a83eee488004)      | 메인 제목        | [Unsplash License](https://unsplash.com/license) |
+| [라운지](https://images.unsplash.com/photo-1524758631624-e2822e304c36)    | 메인 제목        | [Unsplash License](https://unsplash.com/license) |
+| [창가 책상](https://images.unsplash.com/photo-1497215728101-856f4ea42174) | 메인 제목        | [Unsplash License](https://unsplash.com/license) |
+| [거실 창](https://images.unsplash.com/photo-1554995207-c18c203602cb)      | 메인 제목        | [Unsplash License](https://unsplash.com/license) |
