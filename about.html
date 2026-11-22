@@ -11,11 +11,58 @@
     <link rel="stylesheet" href="assets/css/tokens.css">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/about.css">
   </head>
   <body data-page="about">
     <div data-mount="header"></div>
     <main id="main" class="page pad" tabindex="-1">
       <h1>소개</h1>
+      <div class="about">
+        <section class="about__section" aria-labelledby="about-story">
+          <p class="about__label">01 — INTRODUCTION</p>
+          <h2 class="about__title" id="about-story">우리의 이야기를 전시하다.</h2>
+          <p class="about__lead">여섯 명의 서로 다른 시선이 하나의 공간에 모였습니다.</p>
+          <figure class="about__photo">
+            <img src="assets/images/exterior.jpg" alt="흰 패널로 된 건물 외관" width="1600" height="1067">
+          </figure>
+        </section>
+        <section class="about__section" aria-labelledby="about-concept">
+          <p class="about__label">02 — OUR CONCEPT</p>
+          <h2 class="about__title" id="about-concept">왜 박물관인가?</h2>
+          <p class="about__lead">각자의 결과물을 하나의 전시로 연결한다는 아이디어에서 출발한 공간.</p>
+          <ul class="about__concepts">
+            <li class="about__concept"><span>01</span><strong>기록</strong></li>
+            <li class="about__concept"><span>02</span><strong>연결</strong></li>
+            <li class="about__concept"><span>03</span><strong>전시</strong></li>
+          </ul>
+        </section>
+        <section class="about__section" aria-labelledby="about-process">
+          <p class="about__label">03 — PROCESS ARCHIVE</p>
+          <h2 class="about__title" id="about-process">하나의 전시가 완성되기까지</h2>
+          <ol class="about__steps">
+            <li class="about__step">기획</li>
+            <li class="about__step">설계</li>
+            <li class="about__step">개발</li>
+            <li class="about__step">완성</li>
+          </ol>
+        </section>
+        <section class="about__section" aria-labelledby="about-explore">
+          <p class="about__label">04 — EXPLORE</p>
+          <h2 class="about__title" id="about-explore">전시 둘러보기</h2>
+          <div class="about__links">
+            <a class="about__link" href="projects.html">
+              <svg class="about__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></svg>
+              <strong>작업 전시</strong>
+              <span>결과를 감상하기</span>
+            </a>
+            <a class="about__link" href="activities.html">
+              <svg class="about__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>
+              <strong>제작 기록</strong>
+              <span>과정 살펴보기</span>
+            </a>
+          </div>
+        </section>
+      </div>
     </main>
     <div data-mount="footer"></div>
     <script src="assets/js/layout.js"></script>
