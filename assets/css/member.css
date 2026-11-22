@@ -1,24 +1,5 @@
 /* 팀원 프로필 카드 (members.html 전용) */
 
-/* 페이지 바탕 */
-[data-page="members"] .site-header {
-  border-bottom: 1px solid var(--line);
-}
-
-[data-page="members"] .site-header .site-nav a {
-  position: relative;
-}
-
-[data-page="members"] .site-header .site-nav a[aria-current="page"]::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0.45rem;
-  height: 2px;
-  background: var(--gold);
-}
-
 [data-page="members"] .page {
   width: 100%;
   max-width: 75rem;
