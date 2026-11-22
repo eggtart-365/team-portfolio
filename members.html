@@ -88,10 +88,7 @@
             <div class="student-id-body">
               <div class="id-main">
                 <div class="photo-box">
-                  <div class="monogram-placeholder">
-                    <span class="monogram-char">하영</span>
-                    <span class="monogram-sub">PHOTO</span>
-                  </div>
+                  <img class="portrait-img" src="assets/images/profiles/hilt01.png" alt="김하영">
                   <span class="inspect-hint">상세 보기 +</span>
                 </div>
                 <div class="id-fields">
@@ -305,6 +302,11 @@
     </main>
     <!-- 상세 보기: 박물관 티켓 모달 -->
     <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-stage">
+      <aside class="dossier" id="dossier" aria-label="팀원 정보">
+        <p class="dossier-name" id="dossierName"></p>
+        <div class="dossier-body" id="dossierBody"></div>
+      </aside>
       <div class="ticket-wrapper">
         <div class="ticket-modal">
           <!-- 1. 짙은 초록색 좌측 세로 티켓 번호 -->
@@ -369,6 +371,7 @@
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
     <div data-mount="footer"></div>
