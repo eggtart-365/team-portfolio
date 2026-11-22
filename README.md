@@ -161,3 +161,4 @@ PR에는 다음 내용을 포함합니다.
 | [라운지](https://images.unsplash.com/photo-1524758631624-e2822e304c36)    | 메인 제목        | [Unsplash License](https://unsplash.com/license) |
 | [창가 책상](https://images.unsplash.com/photo-1497215728101-856f4ea42174) | 메인 제목        | [Unsplash License](https://unsplash.com/license) |
 | [거실 창](https://images.unsplash.com/photo-1554995207-c18c203602cb)      | 메인 제목        | [Unsplash License](https://unsplash.com/license) |
+| [클로드 모네, 〈수련과 일본식 다리〉(1899)](https://artmuseum.princeton.edu/art/collections/objects/31852) | 프로젝트 상세 페이지 | 퍼블릭 도메인 |
