@@ -11,7 +11,7 @@
 | 팀원            | 김하영, 박찬준, 우정우, 김선재, 김병찬                          |
 | 웹사이트 콘셉트 | 박물관 느낌의 팀원 소개 사이트                                  |
 | 저장소          | [team-portfolio](https://github.com/eggtart-365/team-portfolio) |
-| 배포 주소       | GitHub Pages 배포 후 추가                                       |
+| 배포 주소       | [https://eggtart-365.github.io/team-portfolio/](https://eggtart-365.github.io/team-portfolio/) |
 
 ## 개발 환경
 
@@ -136,7 +136,7 @@ PR에는 다음 내용을 포함합니다.
 저장소를 내려받아 `index.html`을 브라우저로 엽니다. 글꼴과 메인 화면의 움직임은 인터넷에 연결되어 있을 때 불러옵니다.
 
 - 배포 계획: `main` 브랜치의 검증된 코드를 GitHub Pages로 배포합니다.
-- GitHub Pages 설정과 최초 배포 확인 후 실제 배포 주소를 이 문서에 추가합니다.
+- 배포 주소: https://eggtart-365.github.io/team-portfolio/
 
 ## 출처
 
@@ -161,3 +161,4 @@ PR에는 다음 내용을 포함합니다.
 | [라운지](https://images.unsplash.com/photo-1524758631624-e2822e304c36)    | 메인 제목        | [Unsplash License](https://unsplash.com/license) |
 | [창가 책상](https://images.unsplash.com/photo-1497215728101-856f4ea42174) | 메인 제목        | [Unsplash License](https://unsplash.com/license) |
 | [거실 창](https://images.unsplash.com/photo-1554995207-c18c203602cb)      | 메인 제목        | [Unsplash License](https://unsplash.com/license) |
+| [클로드 모네, 〈수련과 일본식 다리〉(1899)](https://artmuseum.princeton.edu/art/collections/objects/31852) | 프로젝트 상세 페이지 | 퍼블릭 도메인 |
