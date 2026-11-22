@@ -232,10 +232,16 @@
   background: color-mix(in srgb, var(--ink) 8%, var(--bg));
 }
 
+.photo-box:has(.portrait-img) {
+  background: #fff;
+}
+
 .portrait-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  background: #fff;
   transition: transform 0.4s ease;
 }
 
@@ -314,6 +320,18 @@
   font-size: 0.72rem;
   font-weight: 600;
   white-space: nowrap;
+}
+
+.id-field-value:has(.id-field-duty) {
+  align-items: flex-start;
+}
+
+.id-field-duty {
+  min-width: 0;
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1.35;
+  word-break: keep-all;
 }
 
 .id-field-label {
