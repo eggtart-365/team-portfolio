@@ -43,22 +43,20 @@
             <div class="student-id-body">
               <div class="id-main">
                 <div class="photo-box">
-                  <div class="monogram-placeholder">
-                    <span class="monogram-char">태현</span>
-                    <span class="monogram-sub">PHOTO</span>
-                  </div>
+                  <img class="portrait-img" src="assets/images/profiles/eggtart-365.png" alt="김태현">
                   <span class="inspect-hint">상세 보기 +</span>
                 </div>
                 <div class="id-fields">
                   <div class="id-field">
                     <div class="id-field-value">
-                      <span>NAME</span>
+                      <span>김태현</span>
                       <span class="id-field-role">팀장</span>
                     </div>
                   </div>
                   <div class="id-field">
                     <div class="id-field-value">
-                      <span>담당 파트</span>
+                      <span class="id-field-duty">메인 페이지 · 디자인 시스템</span>
+                      <span class="id-field-role">담당 파트</span>
                     </div>
                   </div>
                 </div>
@@ -88,22 +86,20 @@
             <div class="student-id-body">
               <div class="id-main">
                 <div class="photo-box">
-                  <div class="monogram-placeholder">
-                    <span class="monogram-char">하영</span>
-                    <span class="monogram-sub">PHOTO</span>
-                  </div>
+                  <img class="portrait-img" src="assets/images/profiles/hilt01.png" alt="김하영">
                   <span class="inspect-hint">상세 보기 +</span>
                 </div>
                 <div class="id-fields">
                   <div class="id-field">
                     <div class="id-field-value">
-                      <span>NAME</span>
+                      <span>김하영</span>
                       <span class="id-field-role">팀원</span>
                     </div>
                   </div>
                   <div class="id-field">
                     <div class="id-field-value">
-                      <span>담당 파트</span>
+                      <span class="id-field-duty">팀원 프로필 · 프로젝트 상세 페이지</span>
+                      <span class="id-field-role">담당 파트</span>
                     </div>
                   </div>
                 </div>
@@ -142,13 +138,14 @@
                 <div class="id-fields">
                   <div class="id-field">
                     <div class="id-field-value">
-                      <span>NAME</span>
+                      <span>박찬준</span>
                       <span class="id-field-role">팀원</span>
                     </div>
                   </div>
                   <div class="id-field">
                     <div class="id-field-value">
-                      <span>담당 파트</span>
+                      <span class="id-field-duty">FAQ · 연락처 및 문의 · 이미지 및 아이콘 관리</span>
+                      <span class="id-field-role">담당 파트</span>
                     </div>
                   </div>
                 </div>
@@ -187,13 +184,14 @@
                 <div class="id-fields">
                   <div class="id-field">
                     <div class="id-field-value">
-                      <span>NAME</span>
+                      <span>우정우</span>
                       <span class="id-field-role">팀원</span>
                     </div>
                   </div>
                   <div class="id-field">
                     <div class="id-field-value">
-                      <span>담당 파트</span>
+                      <span class="id-field-duty">팀 소개 페이지 · 웹 접근성 개선</span>
+                      <span class="id-field-role">담당 파트</span>
                     </div>
                   </div>
                 </div>
@@ -232,13 +230,14 @@
                 <div class="id-fields">
                   <div class="id-field">
                     <div class="id-field-value">
-                      <span>NAME</span>
+                      <span>김선재</span>
                       <span class="id-field-role">팀원</span>
                     </div>
                   </div>
                   <div class="id-field">
                     <div class="id-field-value">
-                      <span>담당 파트</span>
+                      <span class="id-field-duty">프로젝트 갤러리 · 사용성 및 화면 테스트</span>
+                      <span class="id-field-role">담당 파트</span>
                     </div>
                   </div>
                 </div>
@@ -277,13 +276,14 @@
                 <div class="id-fields">
                   <div class="id-field">
                     <div class="id-field-value">
-                      <span>NAME</span>
+                      <span>김병찬</span>
                       <span class="id-field-role">팀원</span>
                     </div>
                   </div>
                   <div class="id-field">
                     <div class="id-field-value">
-                      <span>담당 파트</span>
+                      <span class="id-field-duty">활동 기록 페이지 · GitHub Pages 배포</span>
+                      <span class="id-field-role">담당 파트</span>
                     </div>
                   </div>
                 </div>
@@ -305,6 +305,11 @@
     </main>
     <!-- 상세 보기: 박물관 티켓 모달 -->
     <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-stage">
+      <aside class="dossier" id="dossier" aria-label="팀원 정보">
+        <p class="dossier-name" id="dossierName"></p>
+        <div class="dossier-body" id="dossierBody"></div>
+      </aside>
       <div class="ticket-wrapper">
         <div class="ticket-modal">
           <!-- 1. 짙은 초록색 좌측 세로 티켓 번호 -->
@@ -369,6 +374,7 @@
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
     <div data-mount="footer"></div>

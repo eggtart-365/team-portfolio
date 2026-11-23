@@ -20,6 +20,7 @@
   z-index: 20;
   height: var(--header);
   background: var(--bg);
+  border-bottom: 1px solid var(--line);
 }
 
 .site-header__bar {
@@ -71,6 +72,19 @@
 .site-nav a[aria-current="page"],
 .site-mark[aria-current="page"] {
   color: var(--ink);
+}
+
+.site-header .site-nav a[aria-current="page"] {
+  position: relative;
+}
+
+.site-header .site-nav a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0.45rem;
+  height: 2px;
+  background: var(--ink);
 }
 
 .intro {
