@@ -526,6 +526,18 @@
   font-weight: 700;
 }
 
+.dossier-project-link {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.dossier-project-link:hover,
+.dossier-project-link:focus-visible {
+  color: var(--accent);
+}
+
 /* drop-shadow로 실제 잘린 원 모양을 따라 그림자 생성 */
 .ticket-wrapper {
   position: relative;

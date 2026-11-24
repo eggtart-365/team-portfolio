@@ -11,6 +11,7 @@
 .project-grid > li {
   display: flex;
   min-width: 0;
+  scroll-margin-top: 5rem;
 }
 
 .project-card {
