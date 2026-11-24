@@ -251,6 +251,11 @@
   background: none;
 }
 
+.photo-box:has(.portrait-img--matte),
+.portrait-img--matte {
+  background: #f6f6f8;
+}
+
 .id-card:hover .portrait-img {
   transform: scale(1.03);
 }
