@@ -101,16 +101,16 @@
     });
   }
 
-  function fillTicketProjects(memberId) {
-    var panel = document.getElementById("ticketProjects");
-    var list = document.getElementById("ticketProjectsList");
+  function fillMemberProjects(memberId) {
+    var panel = document.getElementById("memberProjects");
+    var list = document.getElementById("memberProjectsList");
     var matched = projectsForMember(memberId);
 
     list.replaceChildren();
 
     if (!matched.length) {
       var empty = document.createElement("span");
-      empty.className = "ticket-projects__empty";
+      empty.className = "member-projects__empty";
       empty.textContent = "없음";
       list.appendChild(empty);
       panel.hidden = false;
@@ -120,14 +120,14 @@
     matched.forEach(function (project, index) {
       if (index > 0) {
         var sep = document.createElement("span");
-        sep.className = "ticket-projects__sep";
+        sep.className = "member-projects__sep";
         sep.setAttribute("aria-hidden", "true");
         sep.textContent = "·";
         list.appendChild(sep);
       }
 
       var link = document.createElement("a");
-      link.className = "ticket-projects__link";
+      link.className = "member-projects__link";
       link.href = "projects.html#" + project.id;
       link.textContent = project.title;
       list.appendChild(link);
@@ -161,7 +161,7 @@
 
     lastCard = card;
     fillDossier(card);
-    fillTicketProjects(memberId);
+    fillMemberProjects(memberId);
     document.getElementById("ticketLeftNo").textContent = "NO. " + number + " · ROOM 06";
     document.getElementById("ticketPassBadge").textContent = card.dataset.pass;
     document.getElementById("modalTitle").textContent = card.dataset.name;
