@@ -526,18 +526,6 @@
   font-weight: 700;
 }
 
-.dossier-project-link {
-  color: inherit;
-  font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 0.15em;
-}
-
-.dossier-project-link:hover,
-.dossier-project-link:focus-visible {
-  color: var(--accent);
-}
-
 /* drop-shadow로 실제 잘린 원 모양을 따라 그림자 생성 */
 .ticket-wrapper {
   position: relative;
@@ -741,6 +729,65 @@
   color: var(--ink);
   word-break: keep-all;
   line-height: 1.25;
+}
+
+.ticket-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+  padding: 0.55rem 0.7rem 0.6rem;
+  border: 1px solid var(--ink);
+  background-color: var(--bg);
+}
+
+.ticket-projects[hidden] {
+  display: none;
+}
+
+.ticket-projects__label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.ticket-projects__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2rem 0.45rem;
+  min-width: 0;
+}
+
+.ticket-projects__link {
+  color: var(--ink);
+  font-size: 0.84rem;
+  font-weight: 800;
+  line-height: 1.3;
+  text-decoration: none;
+  word-break: keep-all;
+}
+
+.ticket-projects__link:hover,
+.ticket-projects__link:focus-visible {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.ticket-projects__sep {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.ticket-projects__empty {
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
 /* 3. 티켓 우측 절취부(스텁): 절취선 + 스캔 QR */

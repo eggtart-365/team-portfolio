@@ -101,52 +101,67 @@
     });
   }
 
-  function projectNodes(memberId) {
+  function fillTicketProjects(memberId) {
+    var panel = document.getElementById("ticketProjects");
+    var list = document.getElementById("ticketProjectsList");
     var matched = projectsForMember(memberId);
+
+    list.replaceChildren();
+
     if (!matched.length) {
-      return [paragraph("등록된 작업이 없습니다.", "dossier-text")];
+      var empty = document.createElement("span");
+      empty.className = "ticket-projects__empty";
+      empty.textContent = "없음";
+      list.appendChild(empty);
+      panel.hidden = false;
+      return;
     }
 
-    return matched.map(function (project) {
-      var line = document.createElement("p");
+    matched.forEach(function (project, index) {
+      if (index > 0) {
+        var sep = document.createElement("span");
+        sep.className = "ticket-projects__sep";
+        sep.setAttribute("aria-hidden", "true");
+        sep.textContent = "·";
+        list.appendChild(sep);
+      }
+
       var link = document.createElement("a");
-      line.className = "dossier-line";
-      link.className = "dossier-project-link";
+      link.className = "ticket-projects__link";
       link.href = "projects.html#" + project.id;
       link.textContent = project.title;
-      line.appendChild(link);
-      return line;
+      list.appendChild(link);
     });
+
+    panel.hidden = false;
   }
 
   function fillDossier(card) {
-    var memberId = card.closest(".badge-slot").id;
-    var profile = profiles[memberId];
+    var profile = profiles[card.closest(".badge-slot").id];
 
     document.getElementById("dossierName").textContent = card.dataset.name;
     dossierBody.replaceChildren();
     dossier.scrollTop = 0;
+    if (!profile) return;
 
-    if (profile) {
-      if (profile.intro) dossierBody.appendChild(paragraph(profile.intro, "dossier-intro"));
-      if (profile.interest) addBlock("관심 분야", [paragraph(profile.interest, "dossier-text")]);
-      if (profile.skills && profile.skills.length) addBlock(profile.skillsTitle, skillNodes(profile.skills));
-      if (profile.learn) addBlock("배우고 싶은 기술", [paragraph(profile.learn, "dossier-text")]);
-      if (profile.notes && profile.notes.length) {
-        addBlock("작업하면서 해결한 문제나 배운 점", profile.notes.map(function (note) {
-          return paragraph(note, "dossier-text");
-        }));
-      }
+    if (profile.intro) dossierBody.appendChild(paragraph(profile.intro, "dossier-intro"));
+    if (profile.interest) addBlock("관심 분야", [paragraph(profile.interest, "dossier-text")]);
+    if (profile.skills && profile.skills.length) addBlock(profile.skillsTitle, skillNodes(profile.skills));
+    if (profile.learn) addBlock("배우고 싶은 기술", [paragraph(profile.learn, "dossier-text")]);
+    if (profile.notes && profile.notes.length) {
+      addBlock("작업하면서 해결한 문제나 배운 점", profile.notes.map(function (note) {
+        return paragraph(note, "dossier-text");
+      }));
     }
-
-    addBlock("작업", projectNodes(memberId));
   }
 
   function openModal(card) {
     var number = card.dataset.pass.replace("PASS ", "");
+    var memberId = card.closest(".badge-slot").id;
 
     lastCard = card;
     fillDossier(card);
+    fillTicketProjects(memberId);
     document.getElementById("ticketLeftNo").textContent = "NO. " + number + " · ROOM 06";
     document.getElementById("ticketPassBadge").textContent = card.dataset.pass;
     document.getElementById("modalTitle").textContent = card.dataset.name;
@@ -159,7 +174,7 @@
     document.getElementById("modalGithub").href = "https://github.com/" + card.dataset.github;
 
     var qr = document.getElementById("modalQrImg");
-    qr.src = "assets/images/qr-" + card.closest(".badge-slot").id + ".svg";
+    qr.src = "assets/images/qr-" + memberId + ".svg";
     qr.alt = card.dataset.name + " GitHub 프로필 QR 코드";
 
     modal.classList.add("open");
