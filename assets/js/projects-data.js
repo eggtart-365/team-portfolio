@@ -32,6 +32,22 @@ window.ROOM06_PROJECTS = [
     href: "https://lnkd.in/p/ggszGRjS",
     external: true,
     members: ["kim-taehyun"]
+  },
+  {
+    id: "wordnest",
+    title: "WordNest",
+    desc: "발음, 뜻, 예문을 한 번에 보는 영어사전",
+    href: "https://hilt01.github.io/WordNest/",
+    external: true,
+    members: ["kim-hayoung"]
+  },
+  {
+    id: "not-scam",
+    title: "절대 사기아닌!",
+    desc: "재택근무를 안내하는 모집 페이지",
+    href: "https://pastedesoterik.github.io/",
+    external: true,
+    members: ["park-chanjun"]
   }
 ];
 

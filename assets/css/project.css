@@ -2,9 +2,8 @@
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 24rem));
   gap: 1rem;
-  max-width: 70rem;
   margin-top: clamp(2rem, 5vh, 3.5rem);
 }
 
@@ -527,10 +526,6 @@ a.project-card:focus-visible .project-card__names {
 
 /* 좁은 화면 */
 @media (max-width: 860px) {
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-
   .lead-grid {
     grid-template-columns: 1fr;
   }
