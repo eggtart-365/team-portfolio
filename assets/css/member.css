@@ -245,6 +245,17 @@
   transition: transform 0.4s ease;
 }
 
+.portrait-img--scene {
+  object-fit: cover;
+  object-position: center 58%;
+  background: none;
+}
+
+.photo-box:has(.portrait-img--matte),
+.portrait-img--matte {
+  background: #f6f6f8;
+}
+
 .id-card:hover .portrait-img {
   transform: scale(1.03);
 }
@@ -527,12 +538,21 @@
 }
 
 /* drop-shadow로 실제 잘린 원 모양을 따라 그림자 생성 */
-.ticket-wrapper {
+.ticket-stack {
   position: relative;
   z-index: 2;
+  display: flex;
   flex: 1 1 620px;
+  flex-direction: column;
+  gap: 0.85rem;
   width: min(740px, 100%);
   max-width: 740px;
+  min-width: 0;
+}
+
+.ticket-wrapper {
+  position: relative;
+  width: 100%;
   min-width: 0;
   filter: drop-shadow(0 18px 30px color-mix(in srgb, var(--ink) 32%, transparent));
   transform: translateY(10px);
@@ -541,6 +561,66 @@
 
 .modal-backdrop.open .ticket-wrapper {
   transform: translateY(0);
+}
+
+.member-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+  padding: 0.7rem 0.85rem 0.75rem;
+  border: 1px solid var(--line);
+  background-color: var(--bg);
+  color: var(--ink);
+}
+
+.member-projects[hidden] {
+  display: none;
+}
+
+.member-projects__label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.member-projects__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2rem 0.5rem;
+  min-width: 0;
+}
+
+.member-projects__link {
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-decoration: none;
+  word-break: keep-all;
+}
+
+.member-projects__link:hover,
+.member-projects__link:focus-visible {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.member-projects__sep {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.member-projects__empty {
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.35;
 }
 
 /* mask-image를 이용해 절취선 위·아래 반원 및 네 모서리를 실제로 잘라냄 */
@@ -861,13 +941,13 @@
     transform: rotate(-3deg);
   }
 
-  .ticket-wrapper {
+  .ticket-stack {
     width: min(740px, 100%);
   }
 }
 
 @media (max-width: 700px) {
-  .ticket-wrapper {
+  .ticket-stack {
     max-width: 410px;
   }
 

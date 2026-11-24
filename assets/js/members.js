@@ -36,6 +36,24 @@
         "다른 팀원이 먼저 병합한 코드와 제 코드가 충돌했을 때, 필요한 부분을 남기고 나머지를 정리해 직접 해결했습니다. 그리고 팀장님 리뷰를 통해서 오류를 해결하기도 하며, 직접 리뷰를 반영하는 과정을 배웠습니다."
       ]
     },
+    "park-chanjun": {
+      intro: "묵묵히 시킨것을 하는 보조",
+      interest: "정보보안",
+      skillsTitle: "사용해 본 기술 또는 배우고 싶은 기술",
+      skills: "자바스크립트로 내부 값 변조를 막는 기술을 배워보고 싶음",
+      notes: [
+        "PR을 이미 한 상태에서 해당 PR에 바로 새 커밋을 해서 PR을 수정하는게 가능한걸 배움"
+      ]
+    },
+    "woo-jungwoo": {
+      intro: "ROOM 06에서 소개 페이지를 맡아 구현한 우정우입니다.",
+      interest: "백엔드, ai, 빅데이터, 딥러닝에 관심있습니다.",
+      skillsTitle: "사용해 본 기술 또는 배우고 싶은 기술",
+      skills: "HTML와 CSS를 팀 프로젝트에서 사용하였습니다. 배우고 싶은 기술은 JavaScript, 웹 접근성(ARIA)과 React를 이 프로젝트를 통해 배우고 싶었습니다.",
+      notes: [
+        "팀 프로젝트를 진행 하던 중 브랜치 기준 실수 작업 브랜치를 main에서 만들어 PR을 올렸다가 팀 규칙에 맞춰 최신 develop에서 새 브랜치를 만들고 base를 develop으로 다시 올렸습니다. 이 상황을 해결 한 뒤 팀 규칙이 왜 필요한지 대해 생각 할 수 있었습니다."
+      ]
+    },
     "kim-seonjae": {
       intro: "새로운 것을 배우고 직접 해보는 것을 좋아합니다.",
       interest: "웹 개발과 웹사이트 디자인",
@@ -94,6 +112,48 @@
     });
   }
 
+  function projectsForMember(memberId) {
+    var projects = window.ROOM06_PROJECTS || [];
+    return projects.filter(function (project) {
+      return (project.members || []).indexOf(memberId) !== -1;
+    });
+  }
+
+  function fillMemberProjects(memberId) {
+    var panel = document.getElementById("memberProjects");
+    var list = document.getElementById("memberProjectsList");
+    var matched = projectsForMember(memberId);
+
+    list.replaceChildren();
+
+    if (!matched.length) {
+      var empty = document.createElement("span");
+      empty.className = "member-projects__empty";
+      empty.textContent = "없음";
+      list.appendChild(empty);
+      panel.hidden = false;
+      return;
+    }
+
+    matched.forEach(function (project, index) {
+      if (index > 0) {
+        var sep = document.createElement("span");
+        sep.className = "member-projects__sep";
+        sep.setAttribute("aria-hidden", "true");
+        sep.textContent = "·";
+        list.appendChild(sep);
+      }
+
+      var link = document.createElement("a");
+      link.className = "member-projects__link";
+      link.href = "projects.html#" + project.id;
+      link.textContent = project.title;
+      list.appendChild(link);
+    });
+
+    panel.hidden = false;
+  }
+
   function fillDossier(card) {
     var profile = profiles[card.closest(".badge-slot").id];
 
@@ -115,9 +175,11 @@
 
   function openModal(card) {
     var number = card.dataset.pass.replace("PASS ", "");
+    var memberId = card.closest(".badge-slot").id;
 
     lastCard = card;
     fillDossier(card);
+    fillMemberProjects(memberId);
     document.getElementById("ticketLeftNo").textContent = "NO. " + number + " · ROOM 06";
     document.getElementById("ticketPassBadge").textContent = card.dataset.pass;
     document.getElementById("modalTitle").textContent = card.dataset.name;
@@ -130,7 +192,7 @@
     document.getElementById("modalGithub").href = "https://github.com/" + card.dataset.github;
 
     var qr = document.getElementById("modalQrImg");
-    qr.src = "assets/images/qr-" + card.closest(".badge-slot").id + ".svg";
+    qr.src = "assets/images/qr-" + memberId + ".svg";
     qr.alt = card.dataset.name + " GitHub 프로필 QR 코드";
 
     modal.classList.add("open");
